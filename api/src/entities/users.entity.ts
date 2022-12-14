@@ -21,5 +21,5 @@ export class UsersEntity {
   created_at: Date;
 
   @Column({ type: 'datetime', precision: 6, default: null })
-  delete_at: Date;
+  deleted_at: Date;
 }
