@@ -12,7 +12,6 @@ export class AuthController {
 
   @Post('/login')
   async login(@Body() req: LoginDto) {
-    await this.authService.checkUser(req);
-    return 'login';
+    return await this.authService.login(req);
   }
 }
