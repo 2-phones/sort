@@ -1,10 +1,23 @@
+import { SignupDto } from 'src/dto/auth/signup.dto';
 import { LoginDto } from 'src/dto/auth/login.dto';
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
+import { UsersRepository } from 'src/repositories/users.repository';
 
 @Injectable()
 export class AuthService {
-  //   constructor() {}
-  async checkUser(req: LoginDto) {
-    return 'social_id';
+  constructor(private readonly usersRepository: UsersRepository) {}
+
+  async signup(req: SignupDto) {
+    return req;
+  }
+
+  async login(req: LoginDto) {
+    const { user_id } = req;
+    const result = await this.usersRepository.select(user_id);
+    if (!result) {
+      throw new NotFoundException();
+    }
+    console.log(result);
+    return result;
   }
 }
