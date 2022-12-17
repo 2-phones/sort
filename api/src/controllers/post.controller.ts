@@ -2,7 +2,7 @@ import { PostIdDto, UserIdDto } from './../dto/posts/posts.dto';
 import { Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
 import { PostService } from 'src/services/post.service';
 
-@Controller('posts')
+@Controller('sort/posts')
 export class PostController {
   constructor(private postService: PostService) {}
 
