@@ -18,8 +18,9 @@ export class PostsRepository {
 
   async select(): Promise<any> {
     return this.postsRepository
-      .createQueryBuilder('posts')
+      .createQueryBuilder()
       .select([
+        'post_id',
         'title',
         'body',
         'price',
@@ -35,7 +36,7 @@ export class PostsRepository {
 
   async selectPostId(post_id: PostIdDto): Promise<any> {
     return this.postsRepository
-      .createQueryBuilder('posts')
+      .createQueryBuilder()
       .select([
         'title',
         'body',
@@ -45,15 +46,16 @@ export class PostsRepository {
         'region',
         'img_url',
         'status',
+        'created_date',
         'view',
       ])
-      .where('post_id = :post_id', post_id)
-      .getOne();
+      .where(`post_id = :post_id`, post_id)
+      .getRawMany();
   }
 
   async selectUserId(user_id: UserIdDto): Promise<any> {
     return this.postsRepository
-      .createQueryBuilder('posts')
+      .createQueryBuilder()
       .select([
         'title',
         'body',
@@ -63,6 +65,7 @@ export class PostsRepository {
         'region',
         'img_url',
         'status',
+        'created_date',
         'view',
       ])
       .where('user_id = :user_id ', user_id)
