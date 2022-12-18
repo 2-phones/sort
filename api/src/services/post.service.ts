@@ -14,6 +14,7 @@ export class PostService {
     if (!result) {
       throw new NotFoundException(`post_id ${post_id['post_id']} is Not Found`);
     }
+
     return result;
   }
 
