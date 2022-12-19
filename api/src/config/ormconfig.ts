@@ -4,8 +4,8 @@ dotenv.config();
 
 export const ormConfig: TypeOrmModuleOptions = {
   type: 'mysql',
-  host: process.env.HOST,
   port: 3306,
+  host: process.env.HOST,
   username: process.env.USERNAME,
   password: process.env.PASSWORD,
   database: process.env.DATABASE,
