@@ -15,9 +15,14 @@ export class UsersRepository {
     return this.usersRepository.save(user_info);
   }
 
-  async select(user_id: string): Promise<any> {
-    return this.usersRepository.findOne({
-      where: { user_id },
-    });
+  async select(user_data: any): Promise<any> {
+    const { email, password } = user_data;
+
+    return this.usersRepository
+      .createQueryBuilder()
+      .select(['user_id'])
+      .where(`email = :email`, { email })
+      .andWhere(`password = :password`, { password })
+      .getRawOne();
   }
 }

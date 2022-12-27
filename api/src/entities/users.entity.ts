@@ -5,11 +5,17 @@ export class UsersEntity {
   @PrimaryColumn({ type: 'varchar', length: 30 })
   user_id: string;
 
-  @Column({ type: 'varchar', length: 30 })
-  social_id: string;
+  @Column({ type: 'varchar', length: 30, default: null })
+  social_id: string | null;
 
   @Column({ type: 'varchar', length: 10 })
-  social_type: string;
+  login_type: string;
+
+  @Column({ type: 'varchar', length: 30 })
+  email: string;
+
+  @Column({ type: 'varchar', length: 30 })
+  password: string;
 
   @Column({ type: 'varchar', length: 30, default: null })
   user_name: string | null;
