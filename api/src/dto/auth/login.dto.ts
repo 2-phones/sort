@@ -1,6 +1,15 @@
-import { IsNotEmpty, IsString } from 'class-validator';
+import { IsNotEmpty, IsObject, IsString } from 'class-validator';
 
 export class LoginDto {
+  @IsNotEmpty()
+  data: any;
+
+  @IsNotEmpty()
+  @IsString()
+  type: 'social' | 'general';
+}
+
+export class SocialDto {
   @IsString()
   @IsNotEmpty()
   access_token: string;
@@ -8,4 +17,14 @@ export class LoginDto {
   @IsString()
   @IsNotEmpty()
   social_type: string;
+}
+
+export class GeneralDto {
+  @IsString()
+  @IsNotEmpty()
+  email: string;
+
+  @IsString()
+  @IsNotEmpty()
+  password: string;
 }
