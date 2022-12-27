@@ -4,6 +4,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ormConfig } from '../config/ormconfig';
 import { AuthModule } from './auth.module';
 import { PostModule } from './post.module';
+import { UserModule } from './user.module';
+import { TokenModule } from './token.module';
 
 @Module({
   imports: [
@@ -11,6 +13,8 @@ import { PostModule } from './post.module';
     TypeOrmModule.forRoot(ormConfig),
     ConfigModule.forRoot({ isGlobal: true }),
     PostModule,
+    UserModule,
+    TokenModule,
   ],
   controllers: [],
   providers: [],
