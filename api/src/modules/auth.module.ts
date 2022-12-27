@@ -4,18 +4,10 @@ import { Module } from '@nestjs/common';
 import { AuthController } from 'src/controllers/auth.controller';
 import { AuthService } from 'src/services/auth.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { JwtModule } from '@nestjs/jwt';
+import { TokenModule } from './token.module';
 
 @Module({
-  imports: [
-    TypeOrmModule.forFeature([UsersEntity]),
-    JwtModule.register({
-      secret: process.env.SECRETKEY,
-      signOptions: {
-        expiresIn: '15m',
-      },
-    }),
-  ],
+  imports: [TypeOrmModule.forFeature([UsersEntity]), TokenModule],
   providers: [AuthService, UsersRepository],
   controllers: [AuthController],
 })
