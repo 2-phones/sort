@@ -11,6 +11,7 @@ export class AuthService {
     private readonly usersRepository: UsersRepository,
     private readonly tokenService: TokenService,
   ) {}
+
   async signup(req: SignupDto) {
     return req;
   }
@@ -25,7 +26,7 @@ export class AuthService {
 
   async general(user_data: GeneralDto) {
     try {
-      const result = await this.usersRepository.select(user_data);
+      const result = await this.usersRepository.selectUser(user_data);
       const tokens = await this.tokenService.createTokens(result);
 
       if (!result) {
@@ -50,8 +51,10 @@ export class AuthService {
     return result;
   }
 
-  async tokens(req: any) {
-    const result = await this.tokenService.decodeToken(req);
-    console.log(result);
+  // 토큰 재발급
+  async tokensReissue(access_token: any) {
+    const { user_id } = await this.tokenService.decodeToken(access_token);
+    const result = await this.tokenService.createTokens({ user_id });
+    return result;
   }
 }
