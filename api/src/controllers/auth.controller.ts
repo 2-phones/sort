@@ -1,5 +1,5 @@
 import { AuthService } from './../services/auth.service';
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Headers, Param, Post } from '@nestjs/common';
 import { LoginDto } from 'src/dto/auth/login.dto';
 
 @Controller('sort/auth')
@@ -8,6 +8,13 @@ export class AuthController {
   @Get()
   getAll() {
     return 'hi';
+  }
+
+  @Get('/token')
+  async getToken(@Headers() data: any) {
+    const token = data['authorization'].split(' ')[1];
+    await this.authService.tokens(token);
+    return token;
   }
 
   @Post('/login')
