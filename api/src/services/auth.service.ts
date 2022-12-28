@@ -1,3 +1,5 @@
+import { createid } from './../util/randomString.util';
+import { SocialSignupDto } from './../dto/auth/signup.dto';
 import { TokenService } from './token.service';
 import { getSocialData } from './../util/axios.social';
 import { SignupDto } from 'src/dto/auth/signup.dto';
@@ -12,19 +14,52 @@ export class AuthService {
     private readonly tokenService: TokenService,
   ) {}
 
+  // 회원가입
   async signup(req: SignupDto) {
-    return req;
+    const { data } = req;
+
+    return req.type === 'social'
+      ? await this.socialSignup(data)
+      : await this.generalSignup(data);
   }
 
+  async generalSignup(data: GeneralDto) {
+    const user_id = createid();
+    const user_data = { user_id, ...data };
+    const result = await this.usersRepository.insert(user_data);
+
+    if (!result) {
+      throw new NotFoundException(`This is a registered account.`);
+    }
+
+    return result;
+  }
+
+  async socialSignup(data: SocialDto) {
+    const socialdata = await getSocialData(data);
+
+    const user_id = createid();
+    const user_data = { user_id, ...socialdata };
+
+    const result = await this.usersRepository.insert(user_data);
+
+    if (!result) {
+      throw new NotFoundException();
+    }
+
+    return result;
+  }
+
+  // 로그인
   async login(req: LoginDto) {
     const { data } = req;
 
     return req.type === 'social'
-      ? await this.social(data)
-      : await this.general(data);
+      ? await this.socialLogin(data)
+      : await this.generalLogin(data);
   }
 
-  async general(user_data: GeneralDto) {
+  async generalLogin(user_data: GeneralDto) {
     try {
       const result = await this.usersRepository.selectUser(user_data);
       const tokens = await this.tokenService.createTokens(result);
@@ -41,13 +76,12 @@ export class AuthService {
     }
   }
 
-  async social(req: SocialDto) {
-    // const result = await this.usersRepository.select(user_id);
-    const result = await getSocialData(req);
-    // if (!result) {
-    //   throw new NotFoundException();
-    // }
-    console.log(result);
+  async socialLogin(req: SocialDto) {
+    const { social_id } = await getSocialData(req);
+    const result = await this.usersRepository.selectProfile({ social_id });
+    if (!result) {
+      throw new NotFoundException('user not found');
+    }
     return result;
   }
 
