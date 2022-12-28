@@ -2,9 +2,14 @@ import { IsNotEmpty, IsString } from 'class-validator';
 
 export class SignupDto {
   @IsNotEmpty()
-  @IsString()
-  user_id: string;
+  data: any;
 
+  @IsNotEmpty()
+  @IsString()
+  type: 'social' | 'general';
+}
+
+export class SocialSignupDto {
   @IsString()
   @IsNotEmpty()
   social_id: string;
@@ -14,8 +19,8 @@ export class SignupDto {
   social_type: string;
 
   @IsString()
-  user_name: string;
+  user_name: string | null;
 
   @IsString()
-  profile_url: string;
+  profile_url: string | null;
 }
