@@ -11,11 +11,7 @@ export class UsersRepository {
     private readonly usersRepository: Repository<UsersEntity>,
   ) {}
 
-  async create(user_info: SignupDto): Promise<any> {
-    return this.usersRepository.save(user_info);
-  }
-
-  async select(user_data: any): Promise<any> {
+  async selectUser(user_data: any): Promise<any> {
     const { email, password } = user_data;
 
     return this.usersRepository
@@ -23,6 +19,41 @@ export class UsersRepository {
       .select(['user_id'])
       .where(`email = :email`, { email })
       .andWhere(`password = :password`, { password })
+      .getRawOne();
+  }
+
+  async selectProfile(id: object): Promise<any> {
+    return this.usersRepository
+      .createQueryBuilder()
+      .select(['user_name', 'profile_url', 'created_at', 'deleted_at'])
+      .where(
+        id['user_id'] ? 'user_id = :user_id' : 'social_id = :social_id',
+        id,
+      )
+      .getRawOne();
+  }
+
+  async insert(user_data: any): Promise<any> {
+    const column = Object.keys(user_data);
+    return this.usersRepository
+      .createQueryBuilder()
+      .insert()
+      .into(UsersEntity, column)
+      .values(user_data)
+      .execute();
+  }
+
+  async updateProfile(user_id: string): Promise<any> {
+    return this.usersRepository
+      .createQueryBuilder()
+      .where(`user_id = :user_id`, { user_id })
+      .getRawOne();
+  }
+
+  async deleteProfile(user_id: string): Promise<any> {
+    return this.usersRepository
+      .createQueryBuilder()
+      .where(`user_id = :user_id`, { user_id })
       .getRawOne();
   }
 }
