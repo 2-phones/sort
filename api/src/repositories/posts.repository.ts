@@ -12,10 +12,6 @@ export class PostsRepository {
     private readonly postsRepository: Repository<PostsEntity>,
   ) {}
 
-  async create(user_info: SignupDto): Promise<any> {
-    return this.postsRepository.save(user_info);
-  }
-
   async select(): Promise<any> {
     return this.postsRepository
       .createQueryBuilder()
