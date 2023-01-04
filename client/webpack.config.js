@@ -6,6 +6,7 @@ const RefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 const refreshPlugin = ['react-refresh/babel'];
 const mode = process.env.NODE_ENV || 'development';
 const dotenv = require('dotenv').config();
+const webpack_dotenv = require('dotenv-webpack');
 
 module.exports = {
   mode,
@@ -50,14 +51,19 @@ module.exports = {
         test: /\.(png|jpg)$/,
         use: ['file-loader'],
       },
+
       {
         test: /\.svg$/,
         use: ['@svgr/webpack'],
       },
+      // {
+      //   test: /\.svg$/,
+      //   use: ['@svgr/webpack'],
+      // },
     ],
   },
   plugins: [
-    new dotenv(),
+    new webpack_dotenv(),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({ template: './public/index.html' }),
     new RefreshWebpackPlugin(),
