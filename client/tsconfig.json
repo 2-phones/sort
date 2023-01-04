@@ -15,5 +15,5 @@
       "module": "CommonJs"
     }
   },
-  "include": ["src/**/*", "tests/**/*", "src", "index.d.ts"]
+  "include": ["src/**/*", "tests/**/*", "src", "custom.d.ts"]
 }
