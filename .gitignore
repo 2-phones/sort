@@ -9,3 +9,6 @@ S3upload
 .vscode
 node_modules
 .env.local
+*.svg
+*.png
+*.ico
