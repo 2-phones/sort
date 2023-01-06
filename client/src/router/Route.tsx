@@ -3,16 +3,15 @@ import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import MainPage from '../Pages/MainPage';
 import DetailPage from '../Pages/DetailPage';
 import MyPage from '../Pages/MyPage';
-import SignUp from '../Components/Modals/SignUp/Signup';
-import Logout from '../Components/Modals/Login/General/Logout';
-import Login from '../Components/Modals/Login/General/Login';
+import SignUp from '../components/auth/SignUp/Signup';
+import Login from '../components/auth/General/Login';
 import Find from '../components/auth/Find';
 import LandingPage from '../Pages/LandingPage';
-import LoginFindSignup from '../Components/Modals/LoginFindSignup';
+import LoginFindSignup from '../components/Modal/LoginFindSignup';
 import WritePage from '../Pages/WritePage';
 import ErrorPage from '../Pages/ErrorPage';
-import KakaoRediect from '../Components/Modals/Login/KaKao/kakaoRediect';
-import EditMain from '../Components/Write/EditMain';
+import KakaoRediect from '../components/auth/KaKao/kakaoRediect';
+import EditMain from '../views/Profile/Write/EditMain';
 import { AnimatePresence } from 'framer-motion';
 
 const Routers = () => {
@@ -57,7 +56,6 @@ const Pages = () => {
 const Modals = () => {
   return (
     <Routes>
-      <Route path="/logout" element={<Logout />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<SignUp />} />
       <Route path="/find" element={<Find />} />
@@ -71,8 +69,7 @@ const ScrollInit = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
-
-  return;
+  return null;
 };
 
 export default Routers;

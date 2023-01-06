@@ -14,6 +14,7 @@ import { RiInstagramFill } from 'react-icons/ri';
 import { FaYoutube, FaGithub, FaHotel, FaRegHeart, FaHeart } from 'react-icons/fa';
 import { FiChevronDown, FiHeart } from 'react-icons/fi';
 import { MdEmail } from 'react-icons/md';
+import { BiX } from 'react-icons/bi';
 
 // 화살표 아이콘  AiOutlineRight, AiOutlineLeft,A iOutlineDown, AiOutlineUp
 // 체크 아이콘 BsFillArrowRightCircleFill
@@ -40,4 +41,5 @@ export {
   FiChevronDown as DownIcon,
   FiHeart as NonHeartIcon,
   FaHeart as HeartIcon,
+  BiX as PenIcon,
 };

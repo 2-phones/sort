@@ -9,7 +9,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { createUser } from '../../../redux/loginslice';
 import { postSignup, usePost, postLogin } from '../../../util/requestLogin';
 import KakaoLogin from '../KaKao/KakaoLogin';
-import NaverLogin from '../Naver/NaverLogin';
 
 const Signup = (props) => {
   const navigate = useNavigate();
@@ -288,7 +287,6 @@ const Signup = (props) => {
           가입하기
         </Logins.Button>
         <KakaoLogin btnname={'회원가입'} />
-        <NaverLogin btnName={'회원가입'} />
       </Logins.Box>
     </Logins.Container>
   );

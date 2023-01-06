@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { RiKakaoTalkFill } from 'react-icons/ri';
-import { KakaoLoginButton } from './KakaoLoginStyle.js';
+import { KakaoLoginButton } from './KakaoLoginStyle';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 

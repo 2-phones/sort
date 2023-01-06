@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Modal from './Modal';
+import Modal from './index';
 import Login from '../auth/General/Login';
 import Signup from '../auth/SignUp/Signup';
 import Find from '../auth/Find';

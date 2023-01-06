@@ -13,6 +13,14 @@ interface BasicBtnType {
   hovercolor: string;
 }
 
+interface ButtonType {
+  height: string;
+  background: string;
+  color: string;
+  fontsize: string;
+  hover: string | undefined;
+}
+
 // ---테스트 버튼모음
 const XXBtn = styled.div`
   width: 100%;
@@ -61,7 +69,7 @@ const Button2 = styled(BasicBtn)`
   background: ${(prop) => prop.background};
   color: ${(prop) => prop.color || 'white'};
 
-  ${Button2}:active {
+  & :active {
     box-shadow: inset 3px 3px 10px;
     background: var(--lightgray);
   }
@@ -106,6 +114,24 @@ const SellbtnComponent = styled.div`
   }
 `;
 
+const ButtonUI = styled.div<ButtonType>`
+  width: 100%;
+  display: flex;
+  height: ${(props) => props.height || '20px'};
+  background: ${(props) => props.background || ''};
+  color: ${(props) => props.color || ''};
+  font-size: ${(props) => props.fontsize || ''};
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 1px 1px 4px 1px #dedcdc;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.7;
+    background: ${(props) => (props.hover ? '#edebeb' : '')};
+  }
+`;
+
 /// -------------------------------------- ///
 
-export { XXBtn, XXBtn2, BasicBtn, SellbtnComponent };
+export { XXBtn, XXBtn2, BasicBtn, SellbtnComponent, ButtonUI };

@@ -140,6 +140,7 @@ const Login = (props) => {
           로그인
         </Logins.Button>
         <KakaoLogin btnname="회원가입" />
+        <KakaoLogin btnname="회원가입" />
 
         <Logins.GoSignUp>
           <Logins.AreYouAMember>회원이 아니신가요?</Logins.AreYouAMember>
