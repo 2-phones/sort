@@ -32,5 +32,8 @@ export class PostsEntity {
   status: string;
 
   @Column({ type: 'int' })
-  view: number;
+  views: number;
+
+  @Column({ type: 'datetime', precision: 6 })
+  created_at: Date;
 }
