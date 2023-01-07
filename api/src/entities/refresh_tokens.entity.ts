@@ -2,7 +2,7 @@ import { Column, CreateDateColumn, Entity, PrimaryColumn } from 'typeorm';
 
 @Entity('REFRESH_TOKENS')
 export class RefreshTokensEntity {
-  @PrimaryColumn({ type: 'varchar', length: 6 })
+  @PrimaryColumn({ type: 'varchar', length: 30 })
   user_id: string;
 
   @Column({ type: 'varchar', length: 255 })
@@ -14,6 +14,6 @@ export class RefreshTokensEntity {
   @Column({ type: 'datetime', precision: 6 })
   created_at: Date;
 
-  @Column({ type: 'datetime', precision: 6, default: null })
-  updated_at: Date | null;
+  @Column({ type: 'datetime', precision: 6 })
+  updated_at: Date;
 }
