@@ -1,17 +1,17 @@
-import React, { ReactComponentElement, useState } from 'react';
-import { ButtonUI } from '../Button/Button';
-import { Input } from '../Input/Input';
-import { Container, LogoSection, ModalWindow } from './momodalStyle';
-import Kakao from '../../components/Imgs/kakao.svg';
-import Google from '../../components/Imgs/google.svg';
+import React from 'react';
+import { Container, ModalBackground, ModalWindow } from './momodalStyle';
+import { useModal } from '../../hooks/modal.hook';
 
 const Modal = ({ Components }: any) => {
+  const { Component, clickHandler } = useModal();
   return (
-    <Container display={Components ? 'flex' : 'none'}>
+    <Container display={Component ? 'flex' : 'none'}>
+      <ModalBackground onClick={() => clickHandler(null)} />
       <ModalWindow>
-        <p className="close"> &times;</p>
-
-        {Components && Components ? <Components /> : null}
+        <p className="close" onClick={() => clickHandler(null)}>
+          &times;
+        </p>
+        {Component && Component ? <Component /> : null}
       </ModalWindow>
     </Container>
   );

@@ -10,14 +10,19 @@ const CommonStyle = styled.div`
   top: 0;
   right: 0;
   bottom: 0;
-  z-index: 4;
+  z-index: 0;
 `;
 
 const Container = styled(CommonStyle)<ModalStyle>`
-  display: ${(props) => props.display || 'none'};
+  display: flex;
+  opacity: 0;
   justify-content: center;
   align-items: center;
   background-color: rgb(0, 0, 0, 0.6);
+`;
+
+const ModalBackground = styled(CommonStyle)`
+  z-index: 0;
 `;
 
 const ModalWindow = styled.div`
@@ -51,4 +56,4 @@ const LogoSection = styled.div`
   }
 `;
 
-export { Container, ModalWindow, LogoSection };
+export { Container, ModalBackground, ModalWindow, LogoSection };
