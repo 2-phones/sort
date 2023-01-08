@@ -1,16 +1,7 @@
 import React, { useState } from 'react';
 import { ButtonUI } from '../../components/Button/Button';
 import { Input } from '../../components/Input/Input';
-import {
-  Container,
-  InputSection,
-  InputBox,
-  OptionSection,
-  KeepLoggedin,
-  ButtonSection,
-  ButtonBox,
-  SignupSection,
-} from './style';
+import * as S from './style';
 import { ReactComponent as Kakao } from '../../components/Imgs/kakao.svg';
 import { ReactComponent as Google } from '../../components/Imgs/google.svg';
 import { useAuth } from '../../api/auth.api';
@@ -38,30 +29,36 @@ const Login = () => {
   const { success, error, authRequest } = useAuth(userData, 'login');
 
   return (
-    <Container>
-      <InputSection>
+    <S.Container>
+      <S.LogoSection>
+        <p className="logo">SORT</p>
+        <p className="logo_description" color="true">
+          SELL OWN REGION TICKET
+        </p>
+      </S.LogoSection>
+      <S.InputSection>
         {InputTypes.map((li) => {
           return (
             <>
               <p>{li.label}</p>
-              <InputBox key={li.id}>
+              <S.InputBox key={li.id}>
                 <Input name={li.name} placeholder={li.placeholder} onChange={changehandler} />
-              </InputBox>
+              </S.InputBox>
             </>
           );
         })}
-      </InputSection>
-      <OptionSection>
-        <KeepLoggedin>
+      </S.InputSection>
+      <S.OptionSection>
+        <S.KeepLoggedin>
           <input type="checkbox" />
           <p>로그인 유지하기</p>
-        </KeepLoggedin>
+        </S.KeepLoggedin>
         <p className="search_pw">비밀번호 찾기</p>
-      </OptionSection>
-      <ButtonSection>
+      </S.OptionSection>
+      <S.ButtonSection>
         {btnTypes.map((li) => {
           return (
-            <ButtonBox>
+            <S.ButtonBox>
               <ButtonUI
                 key={li.id}
                 height="40px"
@@ -74,15 +71,15 @@ const Login = () => {
                 <p className="logo">{li.svg}</p>
                 <p>{li.name}</p>
               </ButtonUI>
-            </ButtonBox>
+            </S.ButtonBox>
           );
         })}
-      </ButtonSection>
-      <SignupSection>
+      </S.ButtonSection>
+      <S.SignupSection>
         <p className="body">회원이 아니신가요?</p>
         <a className="signup">회원가입</a>
-      </SignupSection>
-    </Container>
+      </S.SignupSection>
+    </S.Container>
   );
 };
 

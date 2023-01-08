@@ -8,6 +8,22 @@ const Container = styled.div`
   width: 100%;
 `;
 
+const LogoSection = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 0;
+
+  .logo {
+    font-size: 25px;
+  }
+  .logo_description {
+    font-size: 12px;
+    color: #969595;
+  }
+`;
+
 const InputSection = styled.div`
   p {
     margin-top: 15px;
@@ -79,4 +95,14 @@ const SignupSection = styled.div`
   }
 `;
 
-export { Container, InputSection, InputBox, OptionSection, KeepLoggedin, ButtonSection, ButtonBox, SignupSection };
+export {
+  Container,
+  LogoSection,
+  InputSection,
+  InputBox,
+  OptionSection,
+  KeepLoggedin,
+  ButtonSection,
+  ButtonBox,
+  SignupSection,
+};
