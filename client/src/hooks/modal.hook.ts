@@ -1,11 +1,17 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { openHandler } from '../redux/Slices/modal.slice';
 import Login from '../views/Login';
+import Signup from '../views/Signup';
 import { useAppSelector, useAppDispatch } from './redux.hook';
 
-const useOpen = (Compoents : any) => {
-  const isOpen = useAppSelector((state) => state.modal.modalCompoents);
-  const clickHandler = useAppDispatch(openHandler(Compoents));
+export const useModal = () => {
+  const selector = useAppSelector((state) => state.modal.modalCompoents);
+  const Component = selector === 'login' ? Login : selector === 'signup' ? Signup : '';
 
-  return { isOpen, clickHandler };
+  const dispatch = useAppDispatch();
+  const clickHandler = (type: 'login' | 'signup' | null) => {
+    dispatch(openHandler(type));
+  };
+
+  return { Component, clickHandler };
 };
