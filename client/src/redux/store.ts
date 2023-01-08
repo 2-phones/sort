@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { useDispatch, useSelector } from 'react-redux';
+import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import itemSlice from './itemslice';
 import userSlice from './loginslice';
 import pageSlice from './MYPageSlice';
@@ -15,5 +15,5 @@ export const store = configureStore({
 });
 
 export type RootState = ReturnType<typeof store.getState>;
-
 export type DispatchType = typeof store.dispatch;
+

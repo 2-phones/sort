@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 interface InitialState {
   isOpen: boolean;
-  modalCompoents: any;
+  modalCompoents: string | null;
 }
 
 const initialState: InitialState = {
