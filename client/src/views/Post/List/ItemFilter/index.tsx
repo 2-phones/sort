@@ -15,13 +15,7 @@ import {
   SortOpDropbar,
 } from './style';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  createTag,
-  deleteTag,
-  selectSort,
-  openDropbar,
-  selectFilter,
-} from '../../../../redux/itemslice';
+import { createTag, deleteTag, selectSort, openDropbar, selectFilter } from '../../../../redux/itemslice';
 import Sellbtn from '../../../../components/Button/Sellbtn';
 
 const Filter = () => {
@@ -103,21 +97,14 @@ const SortOption = () => {
     <SortSection>
       <SortByOption>
         <h4 className="select_text">{choiced}</h4>
-        <p
-          className={isSelect ? 'select_icon open' : 'select_icon'}
-          onClick={() => dispatch(openDropbar(!isSelect))}
-        >
+        <p className={isSelect ? 'select_icon open' : 'select_icon'} onClick={() => dispatch(openDropbar(!isSelect))}>
           <DownIcon />
         </p>
       </SortByOption>
       <SortOpDropbar display={isSelect ? 'flex' : 'none'}>
         {sortList.map((option, i) => {
           return (
-            <p
-              className="opitons"
-              key={option}
-              onClick={() => dispatch(selectSort([option, !isSelect]))}
-            >
+            <p className="opitons" key={option} onClick={() => dispatch(selectSort([option, !isSelect]))}>
               {option}
             </p>
           );
