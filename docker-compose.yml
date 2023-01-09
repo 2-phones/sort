@@ -1,0 +1,45 @@
+version: "3.0"
+
+services:
+  client:
+    image: eunsoo2/client:ver2
+    container_name: client
+    build:
+      context: ./client
+      dockerfile: Dockerfile.prod
+    env_file:
+      - ./client/.env
+    environment:
+      - KAKAO_KEY=${KAKAO_KEY}
+      - NAVER_CLIENT_ID=${NAVER_CLIENT_ID}
+      - ITEM_API_URL=${ITEM_API_URL}
+      - LOGIN_API_URL=${LOGIN_API_URL}
+      - CHAT_API_URL=${CHAT_API_URL}
+      - DOBBY_KEY=${DOBBY_KEY}
+      - NAVER_CALLBACK_URL=${NAVER_CALLBACK_URL}
+      - NAVER_URL=${NAVER_URL}
+    ports:
+      - "3000:3000"
+
+  # nginx:
+  #   image : nginx
+  #   container_name: nginx
+  #   restart: unless-stopped
+  #   ports:
+  #     - 80:80
+  #     - 443:443
+  #   volumes:
+  #     - ./Documents/nginx/conf.d:/etc/nginx/conf.d
+  #     - ./Documents/certbot/conf:/etc/letsencrypt
+  #     - ./Documents/certbot/www:/var/www/certbot
+
+  # certbot:
+  #   depends_on:
+  #     - nginx
+  #   image: certbot/certbot
+  #   container_name: certbot
+  #   restart: unless-stopped
+  #   volumes:
+  #     - ./Documents/certbot/conf:/etc/letsencrypt
+  #     - ./Documents/certbot/www:/var/www/certbot
+  #   command: certonly --dry-run --webroot --webroot-path=/usr/share/nginx/html --email dcpg95@gmail.com --agree-tos --no-eff-email --keep-until-expiring -d ticketissort.com
