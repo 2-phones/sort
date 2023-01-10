@@ -25,7 +25,7 @@ export class PostsRepository {
         'region',
         'img_url',
         'status',
-        'view',
+        'views',
       ])
       .getRawMany();
   }
@@ -43,7 +43,7 @@ export class PostsRepository {
         'img_url',
         'status',
         'created_date',
-        'view',
+        'views',
       ])
       .where(`post_id = :post_id`, post_id)
       .getRawMany();
@@ -62,7 +62,7 @@ export class PostsRepository {
         'img_url',
         'status',
         'created_date',
-        'view',
+        'views',
       ])
       .where('user_id = :user_id ', user_id)
       .getMany();
