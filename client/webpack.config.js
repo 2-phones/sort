@@ -13,7 +13,7 @@ module.exports = {
   entry: './src/index.tsx',
   devtool: 'eval',
   output: {
-    path: path.resolve(__dirname, 'docs'),
+    path: path.resolve(__dirname, 'dist'),
     filename: '[name].js',
     publicPath: '/',
   },
@@ -60,7 +60,7 @@ module.exports = {
   plugins: [
     new webpack_dotenv(),
     new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({ template: './public/index.html' }),
+    new HtmlWebpackPlugin({ template: './public/index.html', favicon: './public/logo.ico' }),
     new RefreshWebpackPlugin(),
   ],
 };
