@@ -55,7 +55,7 @@ const ButtonSection = styled.div`
     display: flex;
     position: absolute;
     left: 10px;
-    svg {
+    img {
       width: 30px;
       height: 15px;
     }
@@ -75,8 +75,9 @@ const LoginSection = styled.div`
     color: #bcbcbc;
     margin-right: 10px;
   }
-  .signup {
+  .login {
     border-bottom: 1px solid;
+    margin-right: 5px;
     cursor: pointer;
   }
 `;
