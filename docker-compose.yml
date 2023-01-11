@@ -9,15 +9,6 @@ services:
       dockerfile: Dockerfile.prod
     env_file:
       - ./client/.env
-    environment:
-      - KAKAO_KEY=${KAKAO_KEY}
-      - NAVER_CLIENT_ID=${NAVER_CLIENT_ID}
-      - ITEM_API_URL=${ITEM_API_URL}
-      - LOGIN_API_URL=${LOGIN_API_URL}
-      - CHAT_API_URL=${CHAT_API_URL}
-      - DOBBY_KEY=${DOBBY_KEY}
-      - NAVER_CALLBACK_URL=${NAVER_CALLBACK_URL}
-      - NAVER_URL=${NAVER_URL}
     ports:
       - "3000:3000"
 
