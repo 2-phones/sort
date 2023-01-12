@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-
-
 const ItemBox = styled.div`
   width: 278px;
   background: #ffffff;
@@ -9,6 +7,8 @@ const ItemBox = styled.div`
   margin-bottom: 20px;
   margin-right: 20px;
   box-shadow: 1px 1px 1px 1px lightgray;
+  position: relative;
+
   cursor: pointer;
   p {
     font-family: 'Pretendard-Regular';
@@ -85,6 +85,4 @@ const SellInfo = styled(ItemPrice)`
   }
 `;
 
-
-
-export { ItemBox,  ItemImg, ItemTitle, ItemPrice, SellInfo };
+export { ItemBox, ItemImg, ItemTitle, ItemPrice, SellInfo };

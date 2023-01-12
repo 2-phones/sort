@@ -1,13 +1,15 @@
 import React from 'react';
 import { ViewMoreSection, ViewMoreBtn } from './style';
 import { BasicBtn } from '../../../../components/Button/Button';
-import { viewsCount } from '../../../../redux/itemslice';
 import { DownIcon } from '../../../../components/Icons/Icons';
+import { useAppDispatch } from '../../../../hooks/redux.hook';
+import { viewCount } from '../../../../redux/Slices/posts.slice';
 
-const ViewMore = ({ dispatch }) => {
+const ViewMore = () => {
+  const dispatch = useAppDispatch();
   return (
     <ViewMoreSection>
-      <ViewMoreBtn onClick={() => dispatch(viewsCount(8))}>
+      <ViewMoreBtn onClick={() => dispatch(viewCount(8))}>
         <BasicBtn background="white" color="black" size="20px">
           <p>더보기</p>
           <p>
