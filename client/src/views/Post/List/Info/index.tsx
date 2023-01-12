@@ -1,9 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import SoldOut from '../../SoldOut';
 import { ItemBox, ItemImg, ItemTitle, ItemPrice, SellInfo } from './style';
 
-const Iteminfo = ({ post_id, title, price, region, createdDate, pageMove, img_url }) => {
+const Iteminfo = ({ post_id, title, price, region, createdDate, img_url, status }) => {
+  const navigate = useNavigate();
+  console.log(post_id);
   return (
-    <ItemBox onClick={() => pageMove(`/main/detail/${post_id}`)}>
+    <ItemBox onClick={() => navigate(`/main/detail/${post_id}`)}>
+      {status === '판매완료' ? <SoldOut /> : null}
       <ItemImg>
         <img src={img_url} />
       </ItemImg>
