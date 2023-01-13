@@ -4,6 +4,8 @@ import itemSlice from './itemslice';
 import userSlice from './loginslice';
 import pageSlice from './MYPageSlice';
 import ModalSlice from './Slices/modal.slice';
+import PostsSlice from './Slices/posts.slice';
+import AuthSlice from './Slices/auth.slice';
 
 export const store = configureStore({
   reducer: {
@@ -11,9 +13,10 @@ export const store = configureStore({
     account: userSlice.reducer,
     mypage: pageSlice.reducer,
     modal: ModalSlice.reducer,
+    auth: AuthSlice.reducer,
+    posts: PostsSlice.reducer,
   },
 });
 
 export type RootState = ReturnType<typeof store.getState>;
 export type DispatchType = typeof store.dispatch;
-
