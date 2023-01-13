@@ -1,18 +1,19 @@
 import React, { useEffect } from 'react';
 import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
-import MainPage from '../Pages/MainPage';
-import DetailPage from '../Pages/DetailPage';
-import MyPage from '../Pages/MyPage';
+import MainPage from '../pages/MainPage';
+import DetailPage from '../pages/DetailPage';
+import MyPage from '../pages/MyPage';
 import SignUp from '../components/auth/SignUp/Signup';
 import Login from '../components/auth/General/Login';
 import Find from '../components/auth/Find';
-import LandingPage from '../Pages/LandingPage';
+import LandingPage from '../pages/LandingPage';
 import LoginFindSignup from '../components/Modal/LoginFindSignup';
-import WritePage from '../Pages/WritePage';
-import ErrorPage from '../Pages/ErrorPage';
+import WritePage from '../pages/WritePage';
+import ErrorPage from '../pages/ErrorPage';
 import KakaoRediect from '../components/auth/KaKao/kakaoRediect';
 import EditMain from '../views/Profile/Write/EditMain';
 import { AnimatePresence } from 'framer-motion';
+import RedirectOauth from '../components/auth/oauth';
 
 const Routers = () => {
   return (
@@ -48,6 +49,7 @@ const Pages = () => {
         <Route path="/error" element={<ErrorPage />} />
         <Route path="/find" element={<Find />} />
         <Route path="/main/detail/:id" element={<DetailPage />} />
+        <Route path="/oauth/redirect" element={<RedirectOauth />} />
       </Routes>
     </AnimatePresence>
   );

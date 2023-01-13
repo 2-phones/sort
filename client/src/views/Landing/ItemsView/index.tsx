@@ -4,16 +4,16 @@ import { RightIcon } from '../../../components/Icons/Icons';
 import { BasicBtn } from '../../../components/Button/Button';
 import { useNavigate } from 'react-router-dom';
 
-const ItemsView = ({ latestDatas }) => {
+const ItemsView = ({ posts }) => {
   const navigate = useNavigate();
 
   return (
     <Lands.ItemsView_Container>
       <div className="Previe_title">최근상품</div>
       <Lands.PreviewList>
-        {latestDatas.map((items) => {
+        {posts.map((items) => {
           return (
-            <Lands.ItemPreview key={items.id}>
+            <Lands.ItemPreview key={items.post_id}>
               <Lands.PreviewImg>
                 <img src={items.img_url} />
               </Lands.PreviewImg>

@@ -9,20 +9,17 @@ import { IoLogoInstagram } from 'react-icons/io';
 import LandingCarousel from './Carousel/index';
 import MainBanner from './MainBanner/index';
 import Subscribe from './Subscribe/index';
+import { usePosts } from '../../hooks/usePosts.hook';
 
 const LandingMain = () => {
-  const latestDatas = getItems('landing');
+  const { posts } = usePosts('landing');
   const navigate = useNavigate();
-  const pageMove = (url) => {
-    navigate(url);
-    window.scrollTo(0, 0);
-  };
   return (
     <>
       <Lands.Container>
         <MainBanner />
         <SubBanner />
-        <ItemsView latestDatas={latestDatas} />
+        <ItemsView posts={posts} />
         <Subscribe />
       </Lands.Container>
       <LandingCarousel />

@@ -10,29 +10,32 @@ import ItemSeller from './Seller/index';
 import SellerReview from './SellerReview';
 import { calculateDate } from '../../../util/calculateDate';
 import { getDetail } from '../../../util/requestItem';
+import { usePostId } from '../../../hooks/usePosts.hook';
+import SoldOut from '../SoldOut';
 
 const DetailMain = () => {
   const { id } = useParams();
-  const itemData = getDetail(id)[0];
-  const detailPageDate = calculateDate(itemData?.created_date);
+  const { post } = usePostId(id);
+  const detailPageDate = calculateDate(post?.created_at);
 
   return (
     <Detail_Container>
       <Detail_Section>
         <ItemCategory />
-        <DetailImg img_url={itemData?.img_url} />
+        <DetailImg img_url={post?.img_url} SoldOut={post.status ? SoldOut : null} />
         <DetailItemInfo
-          title={itemData?.title}
-          price={itemData?.price}
-          createdDate={itemData?.detailPageDate}
-          endDate={itemData?.end_date}
-          seat={itemData?.seat_number}
-          region={itemData?.region}
+          SoldOut={post.status ? SoldOut : null}
+          title={post?.title}
+          price={post?.price}
+          createdDate={detailPageDate}
+          endDate={post?.end_date}
+          seat={post?.seat_number}
+          region={post?.region}
         />
-        <ImgList img_url={itemData?.img_url} />
-        <Description description={itemData?.body} />
+        <ImgList img_url={post?.img_url} />
+        <Description description={post?.body} />
         <ItemSeller />
-        <ItemSubInfo region={itemData?.region} />
+        <ItemSubInfo region={post?.region} />
         <SellerReview />
       </Detail_Section>
     </Detail_Container>
