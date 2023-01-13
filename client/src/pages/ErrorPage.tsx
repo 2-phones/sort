@@ -1,5 +1,5 @@
 import React from 'react';
-import ErrorMain from '../Components/Error/ErrorMain';
+import ErrorMain from '../components/Error/ErrorMain';
 import Footer from '../components/Footer/Footer';
 import Header from '../components/Header/Header';
 import { motion } from 'framer-motion';

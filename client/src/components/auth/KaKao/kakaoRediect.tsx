@@ -4,7 +4,7 @@ import axios from 'axios';
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { kakaoSave } from '../../../redux/loginslice';
-import MainPage from '../../../Pages/MainPage';
+import MainPage from '../../../pages/MainPage';
 
 const KakaoRediect = () => {
   const navigate = useNavigate();
@@ -14,7 +14,6 @@ const KakaoRediect = () => {
   let code = params.get('code'); // 인가코드
   let grant_type = 'authorization_code';
   useEffect(() => {
-    // j47K6tkxLmLYFICQyKFbg9qLIx6ocLabbJBJ2nPzji-SN1jIM_NvizwwXq5kvyVFAmsj5go9c-wAAAGEI9xHKg
     axios
       .post(
         `https://kauth.kakao.com/oauth/token?grant_type=${grant_type}&client_id=${process.env.KAKAO_KEY}&redirect_uri=http://localhost:3003/oauth/callback/kakao&code=${code}`,
