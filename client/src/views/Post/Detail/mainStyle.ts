@@ -11,6 +11,7 @@ const Detail_Section = styled(Detail_Container)`
   width: 1000px;
   flex-wrap: wrap;
   justify-content: space-between;
+  position: relative;
 `;
 
 const AllSetting = styled.div`
@@ -28,13 +29,4 @@ const Detail_Img = styled(AllSetting)`
   }
 `;
 
-
-
-
-
-
-export {
-  Detail_Container,
-  Detail_Section,
-  
-};
+export { Detail_Container, Detail_Section };
