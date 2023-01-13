@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import * as dotenv from 'dotenv';
-import { authAPI } from '../config/api.config';
+import { authAPI, GoogleAPI } from '../config/api.config';
 import { useNavigate } from 'react-router-dom';
 
 interface LoginData {
@@ -12,7 +12,22 @@ interface Responses {
   success: any;
   error: any;
 }
+
+export interface AuthData {
+  data: object;
+  type: string;
+}
+
 type AuthType = 'login' | 'signup';
+
+export const createUser = async (api: string, data: AuthData) => {
+  try {
+    const result = await authAPI.post(api, data);
+    return result['data'];
+  } catch (err) {
+    return err;
+  }
+};
 
 export const useAuth = (login_data: LoginData, api: AuthType): { success: any; error: any; authRequest: () => any } => {
   const [success, setSuccess] = useState<any>();
@@ -44,3 +59,15 @@ export const useAuth = (login_data: LoginData, api: AuthType): { success: any; e
 };
 
 
+export const googleOauth = () => {
+  const api = process.env.GOOGLE_OAUTH || '';
+  window.location.assign(api);
+};
+
+export const login = async (data: object) => {
+  return await authAPI.post('login', data);
+};
+
+export const signup = async (data: object) => {
+  return await authAPI.post('signup', data);
+};
