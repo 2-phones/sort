@@ -6,6 +6,7 @@ const Detail_Img = styled.div`
   width: 550px;
   height: 480px;
   background: var(--lightgray);
+  position: relative;
   img {
     width: 100%;
     height: 100%;

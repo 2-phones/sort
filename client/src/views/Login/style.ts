@@ -69,7 +69,7 @@ const ButtonSection = styled.div`
     display: flex;
     position: absolute;
     left: 10px;
-    svg {
+    img {
       width: 30px;
       height: 15px;
     }

@@ -5,31 +5,25 @@ import { ButtonUI } from '../../components/Button/Button';
 import { ReactComponent as Kakao } from '../../components/Imgs/kakao.svg';
 import { ReactComponent as Google } from '../../components/Imgs/google.svg';
 import { useInput } from '../../hooks/useInput';
-import { useAuth } from '../../api/auth.api';
+import { googleOauth, useAuth } from '../../api/auth.api';
 import { useClick } from '../../hooks/useClick';
+import { useModal } from '../../hooks/modal.hook';
+import { useAppDispatch, useAppSelector } from '../../hooks/redux.hook';
+import { authType, socialCheck } from '../../redux/Slices/auth.slice';
 
 const Signup = () => {
   const [userData, changehandler] = useInput();
-  const [btnTypes, SetBtnTypes] = useState([
-    { id: 0, name: '가입하기', background: '#222222', color: '#ffffff', hover: '', svg: '', userData },
-    {
-      id: 1,
-      name: '카카오 회원가입',
-      background: '#FEE900',
-      color: '#000000',
-      hover: '',
-      svg: <Kakao />,
-    },
-    { id: 2, name: '구글 회원가입', background: '#ffffff', color: '#000000', hover: 'dark', svg: <Google /> },
-  ]);
-  const [InputTypes, setInPutTypes] = useState([
-    { id: 0, name: 'email', label: '이메일', placeholder: '예) SORT@SORT.COM' },
-    { id: 1, name: 'password', label: '비밀번호', placeholder: '' },
-  ]);
-  console.log(userData);
-  const { isClick, clickHandler } = useClick();
-  const { success, error, authRequest } = useAuth(userData, 'signup');
-  console.log(success);
+  const buttonInfo = useAppSelector((state) => state.auth.buttonInfo);
+  const inputInfo = useAppSelector((state) => state.auth.inputInfo);
+  const { success, error, authRequest } = useAuth();
+  const { clickHandler } = useModal();
+  const dispatch = useAppDispatch();
+
+  const signupBtnClick = (social: string) => {
+    dispatch(socialCheck(social));
+    dispatch(authType('login'));
+    googleOauth();
+  };
   return (
     <S.Container>
       <S.LogoSection>
@@ -44,7 +38,7 @@ const Signup = () => {
             이메일 인증하기
           </ButtonUI>
         </S.AuthBtn>
-        {InputTypes.map((li, i) => {
+        {inputInfo.map((li, i) => {
           return (
             <>
               <p>{li.label}</p>
@@ -56,7 +50,7 @@ const Signup = () => {
         })}
       </S.InputSection>
       <S.ButtonSection>
-        {btnTypes.map((li) => {
+        {buttonInfo.map((li) => {
           return (
             <S.ButtonBox>
               <ButtonUI
@@ -66,17 +60,21 @@ const Signup = () => {
                 color={li.color}
                 fontsize="14px"
                 hover={li.hover}
-                onClick={() => authRequest()}
+                onClick={() => signupBtnClick(li.social)}
               >
-                <p className="logo">{li.svg}</p>
-                <p>{li.name}</p>
+                <p className="logo">
+                  <img src={li.svg} />
+                </p>
+                <p>{li.name} 가입하기</p>
               </ButtonUI>
             </S.ButtonBox>
           );
         })}
       </S.ButtonSection>
       <S.LoginSection>
-        <a className="login">로그인</a>
+        <a className="login" onClick={() => clickHandler('login')}>
+          로그인
+        </a>
         <p className="body">으로 돌아가기</p>
       </S.LoginSection>
     </S.Container>

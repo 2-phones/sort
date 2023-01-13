@@ -4,29 +4,28 @@ import { Input } from '../../components/Input/Input';
 import * as S from './style';
 import { ReactComponent as Kakao } from '../../components/Imgs/kakao.svg';
 import { ReactComponent as Google } from '../../components/Imgs/google.svg';
-import { useAuth } from '../../api/auth.api';
+import { googleOauth, useAuth } from '../../api/auth.api';
 import { useInput } from '../../hooks/useInput';
+import { useModal } from '../../hooks/modal.hook';
+import { useAppDispatch, useAppSelector } from '../../hooks/redux.hook';
+import { authType, socialCheck } from '../../redux/Slices/auth.slice';
 
 const Login = () => {
   const [userData, changehandler] = useInput();
-  const [btnTypes, SetBtnTypes] = useState([
-    { id: 0, name: '로그인', background: '#222222', color: '#ffffff', hover: '', svg: '' },
-    {
-      id: 1,
-      name: '카카오 로그인',
-      background: '#FEE900',
-      color: '#000000',
-      hover: '',
-      svg: <Kakao />,
-    },
-    { id: 2, name: '구글 로그인', background: '#ffffff', color: '#000000', hover: 'dark', svg: <Google /> },
-  ]);
+  const buttons = useAppSelector((state) => state.auth.buttonInfo);
+  const dispatch = useAppDispatch();
   const [InputTypes, setInPutTypes] = useState([
     { id: 0, label: '이메일', name: 'email', placeholder: '예) SORT@SORT.COM' },
     { id: 1, label: '비밀번호', name: 'password', placeholder: '' },
   ]);
-
   const { success, error, authRequest } = useAuth(userData, 'login');
+  const { clickHandler } = useModal();
+
+  const loginBtnClick = (social: string) => {
+    dispatch(socialCheck(social));
+    dispatch(authType('login'));
+    googleOauth();
+  };
 
   return (
     <S.Container>
@@ -56,7 +55,7 @@ const Login = () => {
         <p className="search_pw">비밀번호 찾기</p>
       </S.OptionSection>
       <S.ButtonSection>
-        {btnTypes.map((li) => {
+        {buttons.map((li) => {
           return (
             <S.ButtonBox>
               <ButtonUI
@@ -66,10 +65,12 @@ const Login = () => {
                 color={li.color}
                 fontsize="14px"
                 hover={li.hover}
-                onClick={() => authRequest()}
+                onClick={() => loginBtnClick(li.social)}
               >
-                <p className="logo">{li.svg}</p>
-                <p>{li.name}</p>
+                <p className="logo">
+                  <img src={li.svg} />
+                </p>
+                <p>{li.name} 로그인</p>
               </ButtonUI>
             </S.ButtonBox>
           );
@@ -77,7 +78,9 @@ const Login = () => {
       </S.ButtonSection>
       <S.SignupSection>
         <p className="body">회원이 아니신가요?</p>
-        <a className="signup">회원가입</a>
+        <a className="signup" onClick={() => clickHandler('signup')}>
+          회원가입
+        </a>
       </S.SignupSection>
     </S.Container>
   );
