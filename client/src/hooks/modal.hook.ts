@@ -9,7 +9,7 @@ export const useModal = () => {
   const Component = selector === 'login' ? Login : selector === 'signup' ? Signup : '';
 
   const dispatch = useAppDispatch();
-  const clickHandler = (type: 'login' | 'signup' | null) => {
+  const clickHandler = (type: string | null) => {
     dispatch(openHandler(type));
   };
 
