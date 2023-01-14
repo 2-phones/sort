@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, ModalBackground, ModalWindow } from './momodalStyle';
+import { Container, ModalBackground, ModalWindow } from './style';
 import { useModal } from '../../hooks/modal.hook';
 
 const Modal = ({ Components }: any) => {
