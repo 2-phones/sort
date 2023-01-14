@@ -84,6 +84,7 @@ const SellbtnComponent = styled.div`
   right: 50px;
   bottom: 90px;
   background: #e6eed8;
+  z-index: 4;
   cursor: pointer;
   border-radius: 10px;
   box-shadow: 2px 3px 1px 1px gray;
