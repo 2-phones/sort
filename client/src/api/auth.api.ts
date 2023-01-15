@@ -58,9 +58,16 @@ export const useAuth = (login_data: LoginData, api: AuthType): { success: any; e
   return { success, error, authRequest };
 };
 
-
 export const googleOauth = () => {
+  const googleScope = `${process.env.SCOPE1} ${process.env.SCOPE2}`;
+  const api = process.env.GOOGLE_OAUTH + googleScope || '';
+  localStorage.setItem('social_type', 'google');
+  window.location.assign(api);
+};
+
+export const kakaoOauth = () => {
   const api = process.env.GOOGLE_OAUTH || '';
+  localStorage.setItem('social_type', 'kakao');
   window.location.assign(api);
 };
 
