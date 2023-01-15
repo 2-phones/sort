@@ -22,8 +22,7 @@ const Login = () => {
   const { clickHandler } = useModal();
 
   const loginBtnClick = (social: string) => {
-    dispatch(socialCheck(social));
-    dispatch(authType('login'));
+    localStorage.setItem('auth', 'login');
     googleOauth();
   };
 
