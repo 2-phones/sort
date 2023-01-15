@@ -6,13 +6,14 @@ import { chekckLocal } from '../../util/requestLogin';
 import Modal from '../Modal';
 import Login from '../../views/Login';
 import { useModal } from '../../hooks/modal.hook';
+import { tokenCheck } from '../../util/tokenCheck';
 
 const Sellbtn = () => {
   const { clickHandler } = useModal();
   const navigate = useNavigate();
-
+  const token = tokenCheck();
   return (
-    <SellbtnComponent onClick={() => clickHandler('login')}>
+    <SellbtnComponent onClick={() => (token ? navigate('/write') : clickHandler('login'))}>
       <p>상</p>
       <p>품</p>
       <p>등</p>
