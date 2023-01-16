@@ -5,9 +5,17 @@ export const authAPI = axios.create({
 });
 
 export const PostsAPI = axios.create({
-  baseURL: process.env.POST_API,
+  baseURL: process.env.SERVER_API,
 });
 
 export const GoogleAPI = axios.create({
   baseURL: process.env.GOOGLE_API,
+});
+
+export const UserAPI = axios.create({
+  baseURL: process.env.USER_API,
+});
+
+export const ServerAPI = axios.create({
+  baseURL: process.env.SERVER_API,
 });
