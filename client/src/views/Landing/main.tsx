@@ -9,10 +9,10 @@ import { IoLogoInstagram } from 'react-icons/io';
 import LandingCarousel from './Carousel/index';
 import MainBanner from './MainBanner/index';
 import Subscribe from './Subscribe/index';
-import { usePosts } from '../../hooks/usePosts.hook';
+import { useGetPosts } from '../../hooks/usePosts.hook';
 
 const LandingMain = () => {
-  const { posts } = usePosts('landing');
+  const { posts } = useGetPosts('landing');
   const navigate = useNavigate();
   return (
     <>
