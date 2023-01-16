@@ -11,17 +11,18 @@ import MyWish from './MyWish';
 import MyResion from './MyResion';
 import Withdraw from './Withdraw';
 import MyinfoMain from './MyinfoMain';
+import { useGetProfile } from '../../hooks/userProfile.hook';
 
 const Myinfo = () => {
   const userEmail = useSelector((state) => state.account.userinfo);
   const pageNum = useSelector((state) => state.mypage.pageNumber);
-  const { email, name } = betaPostUserInfo();
+  const profile = useGetProfile();
   const pages = [
-    <MyinfoMain />,
+    <MyinfoMain profile={profile} />,
     <MyBuy />,
     <MySell />,
     <MyWish />,
-    <MyProfile />,
+    <MyProfile profile={profile} />,
     <MyReview />,
     <MyResion />,
     <Withdraw />,
