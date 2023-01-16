@@ -5,29 +5,12 @@ import axios from 'axios';
 import { betaPostUserInfo } from '../../../util/userInfo';
 import { useDispatch, useSelector } from 'react-redux';
 import { editUserInfo } from '../../../util/userInfo';
-import {
-  Advertise,
-  Certified,
-  CertifiedButton,
-  Checkbox,
-  IdBox,
-  NameBox,
-  InputBox,
-  PasswordBox,
-} from './style';
+import { Advertise, Certified, CertifiedButton, Checkbox, IdBox, NameBox, InputBox, PasswordBox } from './style';
 
-const MyProfile = ({ props }) => {
-  const { email, name, userId } = betaPostUserInfo();
+const MyProfile = ({ profile }: any) => {
   const editName = useDispatch();
   const [editInput, setEdit] = useState('');
   const { editInfo } = editUserInfo();
-  const accessToken = localStorage.getItem('accessToken');
-  const infoo = {
-    email,
-    name: editInput,
-    userId,
-    accessToken,
-  };
 
   return (
     <Draws.Container>
@@ -38,21 +21,18 @@ const MyProfile = ({ props }) => {
           </Draws.ContentTitle>
 
           <IdBox style={{ paddingTop: '5px' }}>
-            <NameBox>아이디</NameBox>
-            <InputBox type="text" defaultValue={name} onChange={(e) => setEdit(e.target.value)} />
+            <NameBox>닉네임</NameBox>
+            <InputBox type="text" defaultValue={profile?.user_name} onChange={(e) => setEdit(e.target.value)} />
             <Certified>
-              <CertifiedButton
-                style={{ marginLeft: '55px' }}
-                onClick={() => editInfo(email, infoo)}
-              >
-                아이디 변경하기
+              <CertifiedButton style={{ marginLeft: '55px' }} onClick={() => null}>
+                닉네임 변경하기
               </CertifiedButton>
             </Certified>
           </IdBox>
 
           <IdBox style={{ paddingTop: '5px' }}>
             <NameBox>이메일</NameBox>
-            <div className="info_default">{email}ssss</div>
+            <div className="info_default">{profile?.email}</div>
           </IdBox>
 
           <PasswordBox style={{ paddingTop: '10px' }}>
