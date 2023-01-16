@@ -15,13 +15,11 @@ const Signup = () => {
   const [userData, changehandler] = useInput();
   const buttonInfo = useAppSelector((state) => state.auth.buttonInfo);
   const inputInfo = useAppSelector((state) => state.auth.inputInfo);
-  const { success, error, authRequest } = useAuth();
   const { clickHandler } = useModal();
   const dispatch = useAppDispatch();
 
   const signupBtnClick = (social: string) => {
-    dispatch(socialCheck(social));
-    dispatch(authType('login'));
+    localStorage.setItem('auth', 'signup');
     googleOauth();
   };
   return (
