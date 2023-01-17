@@ -6,19 +6,26 @@ dotenv.config();
 export const getSocialData = async (data: SocialDto) => {
   const { access_token } = data;
 
-  return data.social_type === 'naver'
-    ? await naverAPI(access_token)
+  return data.social_type === 'google'
+    ? await googleAPI(access_token)
     : await kakaoAPI(access_token);
 };
 
-const naverAPI = async (access_token: string) => {
+const googleAPI = async (access_token: string) => {
   try {
-    const result = await axios.get(process.env.NAVERURL, {
+    const googleOauth = await axios.get(process.env.GOOGLE_URL, {
       headers: {
         Authorization: `Bearer ${access_token}`,
       },
     });
-    return result.data.response;
+    const {
+      id: social_id,
+      name: user_name,
+      picture: profile_url,
+      email,
+    } = googleOauth.data;
+    const result = { social_id, user_name, profile_url, email };
+    return result;
   } catch (err) {
     return err;
   }
@@ -38,6 +45,19 @@ const kakaoAPI = async (access_token: string) => {
     const result = { social_id, user_name, profile_url, email };
 
     return result;
+  } catch (err) {
+    return err;
+  }
+};
+
+const naverAPI = async (access_token: string) => {
+  try {
+    const result = await axios.get(process.env.NAVERURL, {
+      headers: {
+        Authorization: `Bearer ${access_token}`,
+      },
+    });
+    return result.data.response;
   } catch (err) {
     return err;
   }
