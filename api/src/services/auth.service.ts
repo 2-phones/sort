@@ -24,28 +24,31 @@ export class AuthService {
   }
 
   async generalSignup(data: GeneralDto) {
+    const { email } = data;
+    const check = await this.usersRepository.selectProfile({ email });
+
+    if (check) {
+      throw new NotFoundException(`This is a registered account.`);
+    }
+
     const user_id = createid();
     const user_data = { user_id, ...data };
     const result = await this.usersRepository.insert(user_data);
-
-    if (!result) {
-      throw new NotFoundException(`This is a registered account.`);
-    }
 
     return result;
   }
 
   async socialSignup(data: SocialDto) {
     const socialdata = await getSocialData(data);
+    const { social_id } = socialdata;
+    const check = await this.usersRepository.selectProfile({ social_id });
+    if (check) {
+      throw new Error('This is a registered account');
+    }
 
     const user_id = createid();
     const user_data = { user_id, ...socialdata };
-
     const result = await this.usersRepository.insert(user_data);
-
-    if (!result) {
-      throw new NotFoundException();
-    }
 
     return result;
   }
@@ -54,9 +57,11 @@ export class AuthService {
   async login(req: LoginDto) {
     const { data } = req;
 
-    return req.type === 'social'
-      ? await this.socialLogin(data)
-      : await this.generalLogin(data);
+    const result =
+      req.type === 'social'
+        ? await this.socialLogin(data)
+        : await this.generalLogin(data);
+    return result;
   }
 
   async generalLogin(user_data: GeneralDto) {
@@ -78,17 +83,21 @@ export class AuthService {
 
   async socialLogin(req: SocialDto) {
     const { social_id } = await getSocialData(req);
-    const result = await this.usersRepository.selectProfile({ social_id });
-    if (!result) {
-      throw new NotFoundException('user not found');
+    const user_id = await this.usersRepository.selectUserID({ social_id });
+
+    if (!user_id) {
+      throw new NotFoundException('This is an unregistered account');
     }
-    return result;
+
+    const tokens = await this.tokenService.createTokens(user_id);
+    return tokens;
   }
 
   // 토큰 재발급
-  async tokensReissue(access_token: any) {
-    const { user_id } = await this.tokenService.decodeToken(access_token);
-    const result = await this.tokenService.createTokens({ user_id });
-    return result;
-  }
+
+  // async tokensReissue(refresh_token: any) {
+  //   const { user_id } = await this.tokenService.decodeToken(refresh_token);
+  //   const result = await this.tokenService.createTokens({ user_id });
+  //   return result;
+  // }
 }
