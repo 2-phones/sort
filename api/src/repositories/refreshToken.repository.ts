@@ -15,15 +15,24 @@ export class RefreshTokenRepository {
     return this.refreshTokenRepository
       .createQueryBuilder()
       .insert()
-      .values([user_data])
+      .values(user_data)
       .execute();
   }
 
   async select(user_id: any): Promise<any> {
     return this.refreshTokenRepository
       .createQueryBuilder()
-      .select(['token'])
+      .select(['refresh_token'])
       .where(`user_id = :user_id`, user_id)
+      .getRawOne();
+  }
+
+  async selectToken(refresh_token: object): Promise<any> {
+    console.log(refresh_token);
+    return this.refreshTokenRepository
+      .createQueryBuilder()
+      .select(['user_id'])
+      .where('refresh_token = :refresh_token', refresh_token)
       .getRawOne();
   }
 }
