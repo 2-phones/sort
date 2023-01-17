@@ -2,7 +2,9 @@ import { AxiosResponse } from 'axios';
 import { useEffect, useState } from 'react';
 import { PostsAPI } from '../config/api.config';
 
-const createPost = async () => {};
+const createPost = async () => {
+  await PostsAPI.post('')
+};
 const editPosts = async () => {};
 const deltePosts = async () => {};
 
@@ -21,3 +23,4 @@ export const getPostId = async (api: string) => {
     return result['data'];
   } catch {}
 };
+
