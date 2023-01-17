@@ -1,8 +1,23 @@
-import { PostIdDto, UserIdDto } from './../dto/posts/posts.dto';
-import { Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
+import {
+  PostIdDto,
+  PostStatusDto,
+  UserIdDto,
+  FindUserIdDto,
+  QueryStringArrayTestDto,
+} from './../dto/posts/posts.dto';
+import {
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Post,
+  Put,
+  Query,
+  Req,
+} from '@nestjs/common';
 import { PostService } from 'src/services/post.service';
 
-@Controller('sort/posts')
+@Controller('/sort/posts')
 export class PostController {
   constructor(private postService: PostService) {}
 
@@ -11,8 +26,9 @@ export class PostController {
     return await this.postService.getPosts();
   }
 
-  @Get(':post_id')
-  async postId(@Param() post_id: PostIdDto) {
+  @Get('/id/:post_id')
+  async postId(@Param('post_id') post_id: string) {
+    console.log(post_id);
     return await this.postService.getPostId(post_id);
   }
 
@@ -21,9 +37,9 @@ export class PostController {
     return await this.postService.getUserPosts(user_id);
   }
 
-  @Post()
-  create() {
-    return 'post';
+  @Get('/status')
+  async status(@Query() queryData: PostStatusDto) {
+    return await this.postService.getPostStatus(queryData);
   }
 
   @Put()
