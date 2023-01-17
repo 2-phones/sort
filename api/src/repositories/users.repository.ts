@@ -22,10 +22,21 @@ export class UsersRepository {
       .getRawOne();
   }
 
+  async selectUserID(id: object): Promise<any> {
+    return this.usersRepository
+      .createQueryBuilder()
+      .select(['user_id'])
+      .where(
+        id['user_id'] ? 'user_id = :user_id' : 'social_id = :social_id',
+        id,
+      )
+      .getRawOne();
+  }
+
   async selectProfile(id: object): Promise<any> {
     return this.usersRepository
       .createQueryBuilder()
-      .select(['user_name', 'profile_url', 'created_at', 'deleted_at'])
+      .select(['email', 'user_name', 'profile_url', 'created_at'])
       .where(
         id['user_id'] ? 'user_id = :user_id' : 'social_id = :social_id',
         id,
