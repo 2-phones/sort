@@ -6,7 +6,7 @@ export class RefreshTokensEntity {
   user_id: string;
 
   @Column({ type: 'varchar', length: 255 })
-  token: string;
+  refresh_token: string;
 
   @Column({ type: 'datetime', precision: 6 })
   expired_at: Date;
