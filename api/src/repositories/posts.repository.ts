@@ -3,7 +3,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { SignupDto } from 'src/dto/auth/signup.dto';
 import { Repository } from 'typeorm';
-import { PostIdDto, UserIdDto } from 'src/dto/posts/posts.dto';
+import { PostIdDto, PostStatusDto, UserIdDto } from 'src/dto/posts/posts.dto';
 
 @Injectable()
 export class PostsRepository {
@@ -25,15 +25,17 @@ export class PostsRepository {
         'region',
         'img_url',
         'status',
+        'created_at',
         'views',
       ])
       .getRawMany();
   }
 
-  async selectPostId(post_id: PostIdDto): Promise<any> {
+  async selectPostId(postId: PostIdDto): Promise<any> {
     return this.postsRepository
       .createQueryBuilder()
       .select([
+        'post_id',
         'title',
         'body',
         'price',
@@ -42,10 +44,10 @@ export class PostsRepository {
         'region',
         'img_url',
         'status',
-        'created_date',
+        'created_at',
         'views',
       ])
-      .where(`post_id = :post_id`, post_id)
+      .where(`post_id = :post_id`, postId)
       .getRawMany();
   }
 
@@ -61,10 +63,30 @@ export class PostsRepository {
         'region',
         'img_url',
         'status',
-        'created_date',
+        'created_at',
         'views',
       ])
       .where('user_id = :user_id ', user_id)
       .getMany();
+  }
+
+  async selectStatus(status: PostStatusDto): Promise<any> {
+    return await this.postsRepository
+      .createQueryBuilder()
+      .select([
+        'post_id',
+        'title',
+        'body',
+        'price',
+        'end_date',
+        'seat_number',
+        'region',
+        'img_url',
+        'status',
+        'created_at',
+        'views',
+      ])
+      .where('status = :status', status)
+      .getRawMany();
   }
 }
