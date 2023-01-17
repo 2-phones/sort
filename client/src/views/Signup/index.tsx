@@ -6,7 +6,7 @@ import { ReactComponent as Kakao } from '../../components/Imgs/kakao.svg';
 import { ReactComponent as Google } from '../../components/Imgs/google.svg';
 import { useInput } from '../../hooks/useInput';
 import { googleOauth, useAuth } from '../../api/auth.api';
-import { useClick } from '../../hooks/useClick';
+import { useAuthBtnClick, useClick } from '../../hooks/click.hook';
 import { useModal } from '../../hooks/modal.hook';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux.hook';
 import { authType, socialCheck } from '../../redux/Slices/auth.slice';
@@ -58,7 +58,7 @@ const Signup = () => {
                 color={li.color}
                 fontsize="14px"
                 hover={li.hover}
-                onClick={() => signupBtnClick(li.social)}
+                onClick={() => useAuthBtnClick(li.social, 'signup')}
               >
                 <p className="logo">
                   <img src={li.svg} />
