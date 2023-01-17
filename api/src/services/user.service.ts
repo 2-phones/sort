@@ -10,7 +10,7 @@ export class UserService {
   ) {}
   async getUser(token: string) {
     const { user_id } = await this.tokenService.decodeToken(token);
-    const result = await this.userRepository.selectProfile(user_id);
+    const result = await this.userRepository.selectProfile({ user_id });
     return result;
   }
 }
