@@ -2,6 +2,7 @@ import { RefreshTokenRepository } from './../repositories/refreshToken.repositor
 import { JwtService } from '@nestjs/jwt';
 import { Injectable } from '@nestjs/common';
 import { TokensDto } from 'src/dto/auth/token.dto';
+import { getDate } from 'src/util/createDate';
 
 @Injectable()
 export class TokenService {
@@ -27,18 +28,31 @@ export class TokenService {
   }
 
   async refreshToken(payload: any) {
-    const result = await this.refreshTokenRepo.select(payload);
+    const { user_id } = payload;
+    const result = await this.refreshTokenRepo.select({ user_id });
+    const expired_at = getDate();
+
     if (!result) {
-      return this.jwtService.sign(
-        { payload: '' },
+      const refresh_token = this.jwtService.sign(
+        {},
         {
           secret: process.env.SECRETKEY,
           expiresIn: '14d',
         },
       );
+
+      const user_data = { user_id, refresh_token, expired_at };
+      await this.refreshTokenRepo.create(user_data);
+      return refresh_token;
     }
 
-    return result;
+    return result['refresh_token'];
+  }
+
+  async tokensReissue(refresh_token: object) {
+    const user_id = await this.refreshTokenRepo.selectToken({ refresh_token });
+    const access_token = await this.accessToken(user_id);
+    return { access_token };
   }
 
   async decodeToken(tokens: string) {
