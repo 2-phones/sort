@@ -13,7 +13,12 @@ import ErrorPage from '../pages/ErrorPage';
 import KakaoRediect from '../components/auth/KaKao/kakaoRediect';
 import EditMain from '../views/Profile/Write/EditMain';
 import { AnimatePresence } from 'framer-motion';
-import RedirectOauth from '../components/auth/oauth';
+import GoogleOauth from '../components/auth/google';
+import { tokenCheck } from '../util/tokenCheck';
+import PrivateRoute from './PrinateRoute';
+import MyProfile from '../views/Profile/MyProfile';
+import KaKaoOatuh from '../components/auth/kakaoAuth';
+import Oauth from '../components/auth/Ouath';
 
 const Routers = () => {
   return (
@@ -27,30 +32,25 @@ const Routers = () => {
 
 const Pages = () => {
   const navigate = useNavigate();
-  useEffect(() => {
-    if (
-      window.location.pathname.includes('my') ||
-      window.location.pathname.includes('write') ||
-      window.location.pathname.includes('chat')
-    ) {
-      navigate('/error');
-    }
-  }, [useLocation]);
+  const token = tokenCheck();
   return (
     <AnimatePresence>
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/main" element={<MainPage />} />
         {/* <Route path="/chat" element={<ChatPage />} /> */}
-        <Route path="/write" element={<WritePage />} />
-        <Route path="/mypage/sell/edit/:id" element={<EditMain />} />
-        <Route path="/mypage" element={<MyPage />} />
         <Route path="/loginfindsign" element={<LoginFindSignup />} />s
         <Route path="/error" element={<ErrorPage />} />
         <Route path="/find" element={<Find />} />
         <Route path="/main/detail/:id" element={<DetailPage />} />
-        <Route path="/oauth/redirect" element={<RedirectOauth />} />
+        <Route path="/oauth/redirect/google" element={<GoogleOauth />} />
+        <Route path="/oauth/redirect/kakao" element={<KaKaoOatuh />} />
+        <Route path="/oauth" element={<Oauth />} />
       </Routes>
+      <PrivateRoute path="/write" Component={WritePage} />
+      <PrivateRoute path="/mypage/sell/edit/:id" Component={WritePage} />
+      <PrivateRoute path="/mypage" Component={MyPage} />
+      <PrivateRoute path="/mypage/profile" Component={MyProfile} />
     </AnimatePresence>
   );
 };
