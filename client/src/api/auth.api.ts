@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import * as dotenv from 'dotenv';
-import { authAPI, GoogleAPI } from '../config/api.config';
+import { authAPI, GoogleAPI, KaKaoAPI } from '../config/api.config';
 import { useNavigate } from 'react-router-dom';
 
 interface LoginData {
@@ -65,9 +65,22 @@ export const googleOauth = () => {
   window.location.assign(api);
 };
 
-export const kakaoOauth = () => {
-  const api = process.env.GOOGLE_OAUTH || '';
+export const kakaoAuthToken = async (code: string) => {
   localStorage.setItem('social_type', 'kakao');
+  const client_id = process.env.KAKAO_KEY;
+  const redirect_uri = process.env.REDIRECT_URI;
+  return await KaKaoAPI.post('', null, {
+    params: {
+      grant_type: 'authorization_code',
+      client_id,
+      redirect_uri,
+      code,
+    },
+  });
+};
+
+export const kakaoAuthCode = () => {
+  const api = process.env.KAKAO_OAUTH || '';
   window.location.assign(api);
 };
 
@@ -77,4 +90,16 @@ export const login = async (data: object) => {
 
 export const signup = async (data: object) => {
   return await authAPI.post('signup', data);
+};
+
+export const tokensReissue = async (refresh_token: string) => {
+  return await authAPI.post(
+    'token',
+    {},
+    {
+      headers: {
+        Authorization: `Bearer ${refresh_token}`,
+      },
+    },
+  );
 };
