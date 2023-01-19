@@ -3,22 +3,22 @@ import { ItemContainer, ViewsBox, ItemListBox } from './style';
 import { calculateDate } from '../../../../util/calculateDate';
 import { LodingMotion } from '../../../../components/Loding/LodingMotion';
 import Iteminfo from '../Info/index';
-import PostSkeleton from '../../../../components/Loding/Skeleton/POSTS/index';
+import PostSkeleton from '../../../../components/Loding/Skeleton/Posts/index';
 
 const ItemList = ({ posts, dummyData }: any) => {
   return (
     <ItemContainer>
       <ViewsBox>
-        <div>{posts.length} views</div>
+        <div>{posts?.length} views</div>
       </ViewsBox>
       <ItemListBox>
-        {posts.length
+        {posts
           ? posts.map((dataList) => {
               const dateResult = calculateDate(dataList.created_at);
               return (
                 <Iteminfo
-                  img_url={dataList.img_url}
                   key={dataList.post_id}
+                  img_url={dataList.img_url}
                   post_id={dataList.post_id}
                   title={dataList.title}
                   price={dataList.price}
