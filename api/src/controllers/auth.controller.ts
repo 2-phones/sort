@@ -33,14 +33,13 @@ export class AuthController {
       const result = await this.authService.login(req);
       return res.status(200).send(result);
     } catch (err) {
-      return res.status(404).send(err.message);
+      return res.status(404).send(err);
     }
   }
 
   @Post('/signup')
   async signup(@Body() req: SignupDto, @Res() res: Response) {
     try {
-      console.log(req);
       await this.authService.signup(req);
       return res.status(200).send('success signup');
     } catch {
