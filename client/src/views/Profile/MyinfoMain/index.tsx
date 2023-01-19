@@ -3,7 +3,6 @@ import Mains from './style';
 import { useNavigate } from 'react-router-dom';
 import Draws from '../Withdraw/style';
 import Wishs from '../MyWish/style';
-import { postUserInfo, betaPostUserInfo } from '../../../util/userInfo';
 
 const MyinfoMain = ({ profile }: any) => {
   const navigate = useNavigate();
