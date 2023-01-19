@@ -1,18 +1,21 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Modall from '../../Modal';
+import { useTokenReissue } from '../../../hooks/auth.hook';
+import { useGetProfile } from '../../../hooks/userProfile.hook';
+import { tokendelete } from '../../../util/tokenCheck';
 import * as S from '../style';
 
 const NavLogout = () => {
   const navigate = useNavigate();
 
+  useTokenReissue();
   return (
     <S.LoginSection>
       <S.LoginBox>
         <p className="log_left" onClick={() => navigate('/mypage')}>
           마이페이지
         </p>
-        <p className="log_right" onClick={() => null}>
+        <p className="log_right" onClick={() => tokendelete()}>
           로그아웃
         </p>
       </S.LoginBox>
