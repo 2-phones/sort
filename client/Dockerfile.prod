@@ -15,7 +15,7 @@ RUN npm run build
 
 FROM nginx:stable-alpine
 
-COPY .env .
+COPY .env.production .
 
 COPY --from=build /app/client/dist /usr/share/nginx/html
 

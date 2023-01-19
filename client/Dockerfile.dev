@@ -18,7 +18,7 @@ WORKDIR  /app/client
 
 ENV NODE_ENV=production
 
-COPY .env .
+COPY .env.development .
 
 COPY --from=build /app/client/dist dist
 
