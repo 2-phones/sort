@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import Draws from '../Withdraw/style';
 import Sides from '../SideBar/style';
-import axios from 'axios';
-import { betaPostUserInfo } from '../../../util/userInfo';
 import { useDispatch, useSelector } from 'react-redux';
 import { editUserInfo } from '../../../util/userInfo';
 import { Advertise, Certified, CertifiedButton, Checkbox, IdBox, NameBox, InputBox, PasswordBox } from './style';
