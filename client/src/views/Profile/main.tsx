@@ -1,6 +1,5 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { betaPostUserInfo } from '../../util/userInfo';
 import { Containers, CustomerContents, CustomerWithdraws } from './mainstyle';
 import SideBar from './SideBar';
 import MyProfile from './MyProfile';
