@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { PostsAPI } from '../config/api.config';
 
 const createPost = async () => {
-  await PostsAPI.post('')
+  await PostsAPI.post('');
 };
 const editPosts = async () => {};
 const deltePosts = async () => {};
@@ -13,7 +13,7 @@ export const getPosts = async (api: string) => {
     const result = await PostsAPI.get(api);
     return result['data'];
   } catch {
-    return 'server Error';
+    return null;
   }
 };
 
@@ -23,4 +23,3 @@ export const getPostId = async (api: string) => {
     return result['data'];
   } catch {}
 };
-
