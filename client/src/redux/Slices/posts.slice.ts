@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { useAppSelector } from '../../hooks/redux.hook';
 import { selltabsType, DropdownType } from '../InitialState/posts.initialState';
 
 interface InitialState {
@@ -7,6 +8,7 @@ interface InitialState {
   focusTab: string;
   selectSort: string;
   views: number;
+  dummyData: number[];
   statusAPI: string;
 }
 
@@ -22,6 +24,7 @@ const initialState: InitialState = {
     { id: 2, name: '최신순', key: 'created_at' },
     { id: 3, name: '오래된순', key: 'created_at' },
   ],
+  dummyData: [0, 1, 2, 3, 4, 5, 6, 7],
   focusTab: '판매중',
   selectSort: '정확순',
   views: 8,
