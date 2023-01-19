@@ -19,3 +19,10 @@ export const UserAPI = axios.create({
 export const ServerAPI = axios.create({
   baseURL: process.env.SERVER_API,
 });
+
+export const KaKaoAPI = axios.create({
+  baseURL: process.env.KAKAO_TOKEN,
+  headers: {
+    'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
+  },
+});
