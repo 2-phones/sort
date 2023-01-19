@@ -5,8 +5,9 @@ const webpack = require('webpack');
 const RefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 const refreshPlugin = ['react-refresh/babel'];
 const mode = process.env.NODE_ENV || 'development';
-const dotenv = require('dotenv').config();
-const webpack_dotenv = require('dotenv-webpack');
+const dotenv = require('dotenv').config({
+  path: process.env.NODE_ENV == 'production' ? './.env.production' : './.env.development',
+});
 
 module.exports = {
   mode,
@@ -29,15 +30,6 @@ module.exports = {
   },
   module: {
     rules: [
-      // {
-      //   test: /\.(js|jsx)$/,
-      //   exclude: /node_modules/,
-      //   loader: 'babel-loader',
-      //   options: {
-      //     presets: ['@babel/preset-env', '@babel/preset-react'],
-      //     plugins: mode === 'development' ? refreshPlugin : null,
-      //   },
-      // },
       {
         test: /\.(ts|tsx)$/,
         exclude: /node_modules/,
@@ -58,7 +50,9 @@ module.exports = {
     ],
   },
   plugins: [
-    new webpack_dotenv(),
+    new webpack.DefinePlugin({
+      'process.env': JSON.stringify(process.env),
+    }),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({ template: './public/index.html', favicon: './public/logo.ico' }),
     new RefreshWebpackPlugin(),
