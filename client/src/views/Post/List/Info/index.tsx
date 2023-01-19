@@ -5,7 +5,6 @@ import { ItemBox, ItemImg, ItemTitle, ItemPrice, SellInfo } from './style';
 
 const Iteminfo = ({ post_id, title, price, region, createdDate, img_url, status }) => {
   const navigate = useNavigate();
-  console.log(post_id);
   return (
     <ItemBox onClick={() => navigate(`/main/detail/${post_id}`)}>
       {status === '판매완료' ? <SoldOut /> : null}
