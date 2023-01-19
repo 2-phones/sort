@@ -6,18 +6,15 @@ import NavButtons from './Buttons';
 import NavCategory from './Categories';
 import { useNavigate } from 'react-router-dom';
 import NavLogin from './Login';
-import Modall from '../Modal';
-import Login from '../../views/Login';
-import Signup from '../../views/Signup';
+import { tokenCheck } from '../../util/tokenCheck';
+import NavLogout from './Logout';
 
 const Navbar = () => {
   const navigate = useNavigate();
-
+  const token = tokenCheck();
   return (
     <>
-      <S.Top>
-        <NavLogin />
-      </S.Top>
+      <S.Top>{token ? <NavLogout /> : <NavLogin />}</S.Top>
       <S.Middle>
         <S.Main>
           <S.LogoSection>
