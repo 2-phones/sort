@@ -7,6 +7,7 @@ import Modal from '../Modal';
 import Login from '../../views/Login';
 import { useModal } from '../../hooks/modal.hook';
 import { tokenCheck } from '../../util/tokenCheck';
+import { ReactComponent as PostIcon } from '../Imgs/postIcon.svg';
 
 const Sellbtn = () => {
   const { clickHandler } = useModal();
@@ -14,10 +15,9 @@ const Sellbtn = () => {
   const token = tokenCheck();
   return (
     <SellbtnComponent onClick={() => (token ? navigate('/write') : clickHandler('login'))}>
-      <p>상</p>
-      <p>품</p>
-      <p>등</p>
-      <p>록</p>
+      <p>
+        <PostIcon />
+      </p>
     </SellbtnComponent>
   );
 };
