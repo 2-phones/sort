@@ -79,39 +79,31 @@ const SellbtnComponent = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   right: 50px;
   bottom: 90px;
-  background: #e6eed8;
+  border-radius: 50%;
+  background: #1e00a3;
   z-index: 4;
   cursor: pointer;
-  border-radius: 10px;
-  box-shadow: 2px 3px 1px 1px gray;
+  box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.5);
   color: #2e2d2d;
   &:hover {
-    background: ${(prop) => prop.hover || '#b0b0b0'};
+    //background: rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 8px 28px rgba(0, 0, 0, 0.7);
     color: #ffffff;
   }
 
-  img {
-    width: 100%;
-    height: 100%;
-  }
-  p {
-    font-style: 'Gosanja';
-    font-weight: 900;
-    font-size: 18px;
-    margin-right: 3px;
+  svg {
+    fill: white;
+    /* fill: black; */
+    width: 23px;
+    height: 23px;
   }
   @media screen and (max-width: 450px) {
-    width: 70px;
-    height: 30px;
     right: 10px;
     bottom: 20px;
-    p {
-      font-size: 12px;
-    }
   }
 `;
 
