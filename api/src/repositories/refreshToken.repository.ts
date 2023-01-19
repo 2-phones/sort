@@ -28,7 +28,6 @@ export class RefreshTokenRepository {
   }
 
   async selectToken(refresh_token: object): Promise<any> {
-    console.log(refresh_token);
     return this.refreshTokenRepository
       .createQueryBuilder()
       .select(['user_id'])
