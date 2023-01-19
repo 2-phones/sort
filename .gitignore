@@ -1,14 +1,13 @@
 
 # client
 .DS_Store
-.env
 repository.md
 docs
 reuselogic
 S3upload
 .vscode
 node_modules
-.env.local
+.env*
 *.svg
 *.png
 *.ico
