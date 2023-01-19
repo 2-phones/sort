@@ -16,12 +16,7 @@ const Signup = () => {
   const buttonInfo = useAppSelector((state) => state.auth.buttonInfo);
   const inputInfo = useAppSelector((state) => state.auth.inputInfo);
   const { clickHandler } = useModal();
-  const dispatch = useAppDispatch();
 
-  const signupBtnClick = (social: string) => {
-    localStorage.setItem('auth', 'signup');
-    googleOauth();
-  };
   return (
     <S.Container>
       <S.LogoSection>
@@ -41,7 +36,7 @@ const Signup = () => {
             <>
               <p>{li.label}</p>
               <S.InputBox key={li.id}>
-                <Input name={li.name} placeholder={li.placeholder} onChange={changehandler} />
+                <Input name={li.name} padding="" placeholder={li.placeholder} onChange={changehandler} />
               </S.InputBox>
             </>
           );
