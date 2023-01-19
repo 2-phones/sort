@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { DownIcon, CancelIcon, SearchIcon } from '../../../../components/Icons/Icons';
+import { CancelIcon } from '../../../../components/Icons/Icons';
 import { TagComponent } from '../../../../components/Tag/style';
 import * as S from './style';
-import { createTag, deleteTag, selectSort, openDropbar, selectFilter } from '../../../../redux/itemslice';
+import { createTag, deleteTag } from '../../../../redux/itemslice';
 import Sellbtn from '../../../../components/Button/Sellbtn';
 import SellTabs from './SellTabs';
 import SortDropdown from './SortDropdown';
@@ -61,7 +61,7 @@ const TagFilter = ({ tagList }) => {
   return (
     <S.TagSection>
       {tagList &&
-        tagList.map((tags, index) => {
+        tagList.map((tags: any, index: number) => {
           return (
             <TagComponent key={index} display={tags ? 'flex' : ''}>
               <p className="tag_text">{tags}</p>
