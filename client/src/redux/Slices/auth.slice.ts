@@ -61,7 +61,6 @@ const AuthSlice = createSlice({
       state.social = action.payload;
     },
     authType: (state, action) => {
-      console.log(action.payload);
       state.loginORsignup = action.payload;
     },
   },
