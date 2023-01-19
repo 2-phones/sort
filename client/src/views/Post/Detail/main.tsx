@@ -9,13 +9,12 @@ import { Description, ItemSubInfo } from './Description/index';
 import ItemSeller from './Seller/index';
 import SellerReview from './SellerReview';
 import { calculateDate } from '../../../util/calculateDate';
-import { getDetail } from '../../../util/requestItem';
-import { usePostId } from '../../../hooks/usePosts.hook';
+import { useGetPostId } from '../../../hooks/usePosts.hook';
 import SoldOut from '../SoldOut';
 
 const DetailMain = () => {
   const { id } = useParams();
-  const { post } = usePostId(id);
+  const { post } = useGetPostId(id);
   const detailPageDate = calculateDate(post?.created_at);
 
   return (
