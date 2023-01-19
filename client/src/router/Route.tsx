@@ -3,14 +3,9 @@ import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import MainPage from '../pages/MainPage';
 import DetailPage from '../pages/DetailPage';
 import MyPage from '../pages/MyPage';
-import SignUp from '../components/auth/SignUp/Signup';
-import Login from '../components/auth/General/Login';
-import Find from '../components/auth/Find';
 import LandingPage from '../pages/LandingPage';
-import LoginFindSignup from '../components/Modal/LoginFindSignup';
 import WritePage from '../pages/WritePage';
 import ErrorPage from '../pages/ErrorPage';
-import KakaoRediect from '../components/auth/KaKao/kakaoRediect';
 import EditMain from '../views/Profile/Write/EditMain';
 import { AnimatePresence } from 'framer-motion';
 import GoogleOauth from '../components/auth/google';
@@ -25,7 +20,6 @@ const Routers = () => {
     <>
       <ScrollInit />
       <Pages />
-      <Modals />
     </>
   );
 };
@@ -39,9 +33,7 @@ const Pages = () => {
         <Route path="/" element={<LandingPage />} />
         <Route path="/main" element={<MainPage />} />
         {/* <Route path="/chat" element={<ChatPage />} /> */}
-        <Route path="/loginfindsign" element={<LoginFindSignup />} />s
         <Route path="/error" element={<ErrorPage />} />
-        <Route path="/find" element={<Find />} />
         <Route path="/main/detail/:id" element={<DetailPage />} />
         <Route path="/oauth/redirect/google" element={<GoogleOauth />} />
         <Route path="/oauth/redirect/kakao" element={<KaKaoOatuh />} />
@@ -55,16 +47,6 @@ const Pages = () => {
   );
 };
 
-const Modals = () => {
-  return (
-    <Routes>
-      <Route path="/login" element={<Login />} />
-      <Route path="/signup" element={<SignUp />} />
-      <Route path="/find" element={<Find />} />
-      <Route path="/auth/callback/kakao" element={<KakaoRediect />} />
-    </Routes>
-  );
-};
 
 const ScrollInit = () => {
   const { pathname } = useLocation();
