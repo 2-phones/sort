@@ -1,10 +1,4 @@
-import {
-  PostIdDto,
-  PostStatusDto,
-  UserIdDto,
-  FindUserIdDto,
-  QueryStringArrayTestDto,
-} from './../dto/posts/posts.dto';
+import { PostIdDto, PostStatusDto, UserIdDto } from './../dto/posts/posts.dto';
 import {
   Controller,
   Delete,
@@ -28,7 +22,6 @@ export class PostController {
 
   @Get('/id/:post_id')
   async postId(@Param('post_id') post_id: string) {
-    console.log(post_id);
     return await this.postService.getPostId(post_id);
   }
 
