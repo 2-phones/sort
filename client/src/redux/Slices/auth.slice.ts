@@ -1,7 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { useNavigate } from 'react-router-dom';
-import KaKao from '../../components/Imgs/kakao.svg';
-import Google from '../../components/Imgs/google.svg';
+import { GoogleIcon, KakaoIcon } from '../../components/Imgs/imgExport';
 import { ButtonsTypes, InputTypes } from '../InitialState/auth.initialState';
 
 interface InitialState {
@@ -30,7 +28,7 @@ const initialState: InitialState = {
       color: '#000000',
       hover: '',
       social: 'kakao',
-      svg: KaKao,
+      svg: KakaoIcon,
     },
     {
       id: 2,
@@ -39,7 +37,7 @@ const initialState: InitialState = {
       color: '#000000',
       hover: 'dark',
       social: 'google',
-      svg: Google,
+      svg: GoogleIcon,
     },
   ],
   inputInfo: [

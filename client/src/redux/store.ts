@@ -6,6 +6,7 @@ import pageSlice from './MYPageSlice';
 import ModalSlice from './Slices/modal.slice';
 import PostsSlice from './Slices/posts.slice';
 import AuthSlice from './Slices/auth.slice';
+import LandingSlice from './Slices/landing.slice';
 
 export const store = configureStore({
   reducer: {
@@ -15,6 +16,7 @@ export const store = configureStore({
     modal: ModalSlice.reducer,
     auth: AuthSlice.reducer,
     posts: PostsSlice.reducer,
+    landing: LandingSlice.reducer,
   },
 });
 

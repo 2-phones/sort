@@ -2,17 +2,18 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import * as S from '../style';
-import NavIcon from '../../Imgs/navbarimg/index';
+import * as NavIcon from '../../Imgs/imgExport';
 import { useModal } from '../../../hooks/modal.hook';
 import { tokenCheck } from '../../../util/tokenCheck';
+
 const NavButtons = () => {
   const { clickHandler } = useModal();
   const token = tokenCheck();
   const navigate = useNavigate();
   const [buttons, setButtons] = useState([
-    { id: 0, className: 'manIcon', src: NavIcon.user, path: '/mypage', click: 'login' },
-    { id: 1, className: 'msgIcon', src: NavIcon.message3, path: '', click: 'login' },
-    { id: 2, className: 'menuIcon', src: NavIcon.menu, path: '', click: null },
+    { id: 0, className: 'manIcon', src: NavIcon.UserIcon, path: '/mypage', click: 'login' },
+    { id: 1, className: 'msgIcon', src: NavIcon.ChatIcon, path: '', click: 'login' },
+    { id: 2, className: 'menuIcon', src: NavIcon.MenuIcon, path: '', click: null },
   ]);
   return (
     <S.ButtonSection>

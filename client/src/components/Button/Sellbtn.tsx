@@ -1,13 +1,9 @@
-import { sellButton } from '../Imgs/mainImgs/imgExport';
 import React from 'react';
-import { BasicBtn, SellbtnComponent } from './Button';
+import { SellbtnComponent } from './Button';
 import { useNavigate } from 'react-router-dom';
-import { chekckLocal } from '../../util/requestLogin';
-import Modal from '../Modal';
-import Login from '../../views/Login';
 import { useModal } from '../../hooks/modal.hook';
 import { tokenCheck } from '../../util/tokenCheck';
-import { ReactComponent as PostIcon } from '../Imgs/postIcon.svg';
+import { PostIcon } from '../Imgs/imgExport';
 
 const Sellbtn = () => {
   const { clickHandler } = useModal();

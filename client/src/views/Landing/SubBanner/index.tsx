@@ -1,15 +1,17 @@
 import React from 'react';
+import { useAppSelector } from '../../../hooks/redux.hook';
 import { SubBanner_Container, Featuree } from './style';
-import { endbannerImgs, endbannerText, imgName } from '../../../components/Imgs/randingImgs/imgExport';
 
 const SubBanner = () => {
+  const introIcons = useAppSelector((state) => state.landing.icons);
+  const introDescription = useAppSelector((state) => state.landing.intro);
   return (
     <SubBanner_Container>
-      {endbannerImgs.map((imgs, i) => {
+      {introIcons.map((imgs, i) => {
         return (
           <Featuree key={i}>
-            <img className={imgName[i]} src={imgs} />
-            <p>{endbannerText[i]}</p>
+            <img className={imgs} src={imgs} />
+            <p>{introDescription[i]}</p>
           </Featuree>
         );
       })}

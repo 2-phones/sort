@@ -13,8 +13,7 @@ import MyinfoMain from './MyinfoMain';
 import { useGetProfile } from '../../hooks/userProfile.hook';
 
 const Myinfo = () => {
-  const userEmail = useSelector((state) => state.account.userinfo);
-  const pageNum = useSelector((state) => state.mypage.pageNumber);
+  const pageNum = useSelector((state: any) => state.mypage.pageNumber);
   const profile = useGetProfile();
   const pages = [
     <MyinfoMain profile={profile} />,
