@@ -68,7 +68,7 @@ export const googleOauth = () => {
 export const kakaoAuthToken = async (code: string) => {
   localStorage.setItem('social_type', 'kakao');
   const client_id = process.env.KAKAO_KEY;
-  const redirect_uri = process.env.REDIRECT_URI;
+  const redirect_uri = process.env.KAKAO_REDIRECT;
   return await KaKaoAPI.post('', null, {
     params: {
       grant_type: 'authorization_code',
