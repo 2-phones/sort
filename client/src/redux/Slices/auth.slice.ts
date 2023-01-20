@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { GoogleIcon, KakaoIcon } from '../../components/Imgs/imgExport';
-
 import { ButtonsTypes, InputTypes } from '../InitialState/auth.initialState';
 
 interface InitialState {
