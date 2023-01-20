@@ -8,6 +8,3 @@ S3upload
 .vscode
 node_modules
 .env*
-*.svg
-*.png
-*.ico
