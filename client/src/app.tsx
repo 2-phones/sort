@@ -5,14 +5,17 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { store } from './redux/store';
 import Modal from './components/Modal';
+import { motion } from 'framer-motion';
 
 const App = () => {
   return (
     <BrowserRouter>
       <GlobalStyle />
       <Provider store={store}>
-        <Routers />
-        <Modal />
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+          <Routers />
+          <Modal />
+        </motion.div>
       </Provider>
     </BrowserRouter>
   );
