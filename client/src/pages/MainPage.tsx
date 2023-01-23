@@ -7,11 +7,11 @@ import Modal from '../components/Modal';
 
 const MainPage = () => {
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+    <>
       <Header />
       <ItemsMain />
       <Footer />
-    </motion.div>
+    </>
   );
 };
 

@@ -6,11 +6,11 @@ import { motion } from 'framer-motion';
 
 const WritePage = () => {
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+    <>
       <Header />
       <WriteMain />
       <Footer />
-    </motion.div>
+    </>
   );
 };
 
