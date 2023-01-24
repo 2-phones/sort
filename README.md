@@ -1,7 +1,9 @@
-### 프로젝트 구조
+## Architecture
+<details>
+  <summary><h3>프로젝트 구조</h3></summary>
 
 ```
-nestjs_Sort
+Project
 ├─ .gitignore
 ├─ README.md
 ├─ api
@@ -48,3 +50,4 @@ nestjs_Sort
    └─ dockerfile
 
 ```
+</details>
