@@ -1,16 +1,12 @@
 import styled from 'styled-components';
 
 interface BasicBtnType {
-  width: string;
-  height: string;
-  border: string;
-  background: string;
-  shadow: string;
-  color: string;
-  size: string;
-  left: string;
-  hoverbackground: string;
-  hovercolor: string;
+  border?: string;
+  background?: string;
+  shadow?: string;
+  color?: string;
+  hoverbackground?: string;
+  hovercolor?: string;
 }
 
 interface ButtonType {
@@ -41,9 +37,9 @@ const XXBtn2 = styled(XXBtn)`
   box-shadow: inset -0.2rem -0.2rem 1rem gray;
 `;
 
-const BasicBtn = styled.div`
-  width: ${(prop) => prop.width || '100%'};
-  height: ${(prop) => prop.height || '100%'};
+const BasicBtn = styled.div<BasicBtnType>`
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -53,12 +49,9 @@ const BasicBtn = styled.div`
   background: ${(prop) => prop.background || 'black'};
   box-shadow: ${(prop) => prop.shadow || ''};
   color: ${(prop) => prop.color || 'white'};
-  font-size: ${(props) => props.size || ''};
-  margin-left: ${(prop) => prop.left || ''};
-  ${BasicBtn}:hover {
-    background: ${(prop) => prop.hoverbackground || '#b0aeae'};
+  &:hover {
+    opacity: 0.7;
     color: ${(prop) => prop.hovercolor || ''};
-    transition-duration: 0.3s;
   }
   p {
     margin-left: 10px;
