@@ -1,7 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useOauth, useSignup } from '../../hooks/auth.hook';
-import { useAppSelector } from '../../hooks/redux.hook';
+import { useOauth } from '../../hooks/auth/auth.hook';
 
 const GoogleOauth = () => {
   const social_type = localStorage.getItem('social_type') || '';
