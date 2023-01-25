@@ -17,6 +17,7 @@ const Container = styled(CommonStyle)<ModalStyle>`
   justify-content: center;
   align-items: center;
   background-color: rgb(0, 0, 0, 0.6);
+  z-index: 4;
 `;
 
 const ModalBackground = styled(CommonStyle)``;
