@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useTokenReissue } from '../../../hooks/auth.hook';
-import { useGetProfile } from '../../../hooks/userProfile.hook';
+import { useTokenReissue } from '../../../hooks/auth/auth.hook';
 import { tokendelete } from '../../../util/tokenCheck';
 import * as S from '../style';
 
