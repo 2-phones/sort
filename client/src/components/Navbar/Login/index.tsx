@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useModal } from '../../../hooks/modal.hook';
-import Login from '../../../views/Login';
-import Modall from '../../Modal';
 import * as S from '../style';
 
 const NavLogin = () => {
