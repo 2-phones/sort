@@ -1,7 +1,7 @@
 import { PostsType } from './../redux/InitialState/posts.initialState';
 import { useAppSelector } from './redux.hook';
 import { useEffect, useState } from 'react';
-import { getPosts } from '../api/posts.api';
+import { createPost, getPosts } from '../api/posts.api';
 import { useSort } from './filter.hook';
 
 export const useGetPosts = (type: string | undefined) => {
@@ -38,6 +38,19 @@ export const useGetPostId = (id: string | undefined) => {
   return { post };
 };
 
-export const useCreatePost = () => {
-  const access_token = localStorage.getItem('access_token');
+export const useCreatePost = (data: any) => {
+  console.log(data);
+  const post_data = { ...data, status: '판매중' };
+  const promiseCall = async () => {
+    try {
+      const result = await createPost(post_data);
+      console.log(result);
+
+      window.alert('게시물이 등록 되었습니다.');
+      location.replace('/main');
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  promiseCall();
 };
