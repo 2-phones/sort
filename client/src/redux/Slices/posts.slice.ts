@@ -10,6 +10,8 @@ interface InitialState {
   views: number;
   dummyData: number[];
   statusAPI: string;
+  createValues: string;
+  categories: string[];
 }
 
 const initialState: InitialState = {
@@ -27,8 +29,10 @@ const initialState: InitialState = {
   dummyData: [0, 1, 2, 3, 4, 5, 6, 7],
   focusTab: '판매중',
   selectSort: '정확순',
+  categories: ['- 선택 -', '연극/영화', '숙박', '전시', '여행', '스포츠', '공연'],
   views: 8,
   statusAPI: `status?status=판매중`,
+  createValues: '',
 };
 
 // {id : 0 ,type : '정확순'},{id : 1 ,type : '인기순'},{id : 2 ,type : '최신순'},{id : 3 ,type : '오래된순'}
@@ -50,8 +54,11 @@ const PostsSlice = createSlice({
     dropDownSelect: (state, aciton) => {
       state.selectSort = aciton.payload;
     },
+    createPost: (state, aciton) => {
+      state.createValues = aciton.payload;
+    },
   },
 });
 
 export default PostsSlice;
-export const { isFocues, viewCount, dropDownSelect } = PostsSlice.actions;
+export const { isFocues, viewCount, dropDownSelect, createPost } = PostsSlice.actions;
