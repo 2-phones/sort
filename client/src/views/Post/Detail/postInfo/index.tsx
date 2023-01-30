@@ -1,15 +1,15 @@
 import React from 'react';
 import { BasicBtn } from '../../../../components/Button/Button';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
 import { likeFeature } from '../../../../redux/itemslice';
 import { HeartIcon, NonHeartIcon } from '../../../../components/Icons/Icons';
 import { Detail_ItemInfo, InfoTop, InfoBottom, StartDate, EndDate, Seat, Tags, Btn } from './style';
+import { useAppDispatch, useAppSelector } from '../../../../hooks/redux.hook';
 
-const DetailItemInfo = ({ title, price, createdDate, endDate, seat, region, img_url }) => {
+const DetailItemInfo = ({ title, price, createdDate, endDate, seat, region }) => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const like = useSelector((state) => state.items.isLike);
+  const dispatch = useAppDispatch();
+  const like = useAppSelector((state) => state.items.isLike);
 
   return (
     <Detail_ItemInfo>
