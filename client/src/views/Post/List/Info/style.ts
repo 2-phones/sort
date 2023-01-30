@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const ItemBox = styled.div`
-  width: 278px;
+  width: 100%;
   background: #ffffff;
   border-radius: 10px;
   margin-bottom: 20px;
@@ -73,6 +73,7 @@ const ItemPrice = styled(Itemtext)`
   font-size: var(--f-small);
 `;
 const SellInfo = styled(ItemPrice)`
+  padding-bottom: 10px;
   .sell_area {
     border-right: 1px solid var(--lightgray);
     padding-right: 10px;
