@@ -9,7 +9,7 @@ import { Description, ItemSubInfo } from './Description/index';
 import ItemSeller from './Seller/index';
 import SellerReview from './SellerReview';
 import { calculateDate } from '../../../util/calculateDate';
-import { useGetPostId } from '../../../hooks/usePosts.hook';
+import { useGetPostId } from '../../../hooks/post/posts.hook';
 import SoldOut from '../SoldOut';
 
 const DetailMain = () => {
@@ -21,9 +21,8 @@ const DetailMain = () => {
     <Detail_Container>
       <Detail_Section>
         <ItemCategory />
-        <DetailImg img_url={post?.img_url} SoldOut={post.status ? SoldOut : null} />
+        <DetailImg img_url={post?.img_url} SoldOut={post?.status ==='판매완료' ? SoldOut : null} />
         <DetailItemInfo
-          SoldOut={post.status ? SoldOut : null}
           title={post?.title}
           price={post?.price}
           createdDate={detailPageDate}
