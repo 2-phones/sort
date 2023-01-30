@@ -6,7 +6,6 @@ import MyPage from '../pages/MyPage';
 import LandingPage from '../pages/LandingPage';
 import WritePage from '../pages/WritePage';
 import ErrorPage from '../pages/ErrorPage';
-import EditMain from '../views/Profile/Write/EditMain';
 import { AnimatePresence } from 'framer-motion';
 import GoogleOauth from '../components/auth/google';
 import { tokenCheck } from '../util/tokenCheck';
@@ -14,6 +13,7 @@ import PrivateRoute from './PrinateRoute';
 import MyProfile from '../views/Profile/MyProfile';
 import KaKaoOatuh from '../components/auth/kakaoAuth';
 import Oauth from '../components/auth/Ouath';
+import EditPage from '../pages/EditPage';
 
 const Routers = () => {
   return (
@@ -40,13 +40,12 @@ const Pages = () => {
         <Route path="/oauth" element={<Oauth />} />
       </Routes>
       <PrivateRoute path="/write" Component={WritePage} />
-      <PrivateRoute path="/mypage/sell/edit/:id" Component={WritePage} />
+      <PrivateRoute path="/mypage/sell/edit/:id" Component={EditPage} />
       <PrivateRoute path="/mypage" Component={MyPage} />
       <PrivateRoute path="/mypage/profile" Component={MyProfile} />
     </AnimatePresence>
   );
 };
-
 
 const ScrollInit = () => {
   const { pathname } = useLocation();
