@@ -3,7 +3,7 @@ import { MainContainer, MainContent } from './style';
 import ItemList from './ItemLIst/index';
 import ViewMore from './ViewMore/index';
 import FilterBar from './PostsFilter';
-import { useGetPosts } from '../../../hooks/usePosts.hook';
+import { useGetPosts } from '../../../hooks/post/posts.hook';
 import { useAppSelector } from '../../../hooks/redux.hook';
 
 const ItemsMain = () => {
