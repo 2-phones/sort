@@ -1,5 +1,12 @@
 import styled from 'styled-components';
 
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 800px;
+  margin-left: 150px;
+`;
 
 const ContentTitle = styled.div`
   position: relative;
@@ -9,19 +16,21 @@ const ContentTitle = styled.div`
 const UserContainter = styled.div`
   align-items: center;
   display: flex;
-  padding: 30px 0 30px 30px;
+  padding: 30px 0;
   border-radius: 5px;
   border: 1px solid rgba(0, 0, 0, 0.05);
+  height: 50px;
   margin-bottom: 30px;
   margin-top: 10px;
-
-  @media only screen and (max-width: 960px) {
+  width: 100%;
+  /* @media only screen and (max-width: 960px) {
     padding: 10px 0 10px 10px;
     margin-bottom: 15px;
-  }
+  } */
 `;
 
 const UserUSer = styled.div`
+  margin-left: 30px;
   img {
     width: 80px;
     height: 80px;
@@ -112,7 +121,6 @@ const TitleMore = styled.div`
 
 const Title = styled.h3`
   font-weight: bold;
-  font-size: 16px;
   letter-spacing: -0.3px;
 
   @media only screen and (max-width: 960px) {
@@ -132,7 +140,53 @@ const More = styled.a`
   }
 `;
 
-export default {
+const Posts = styled.div`
+  width: 100%;
+  height: 600px;
+  padding-top: 30px;
+`;
+
+const PostsBody = styled.div`
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: auto;
+  display: flex;
+  flex-wrap: wrap;
+
+  margin-top: 20px;
+  @media only screen and (max-width: 894px) {
+    justify-content: space-around;
+  }
+`;
+
+const PostsDefaultMsg = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  p {
+    color: #ababab;
+  }
+`;
+
+const PostContainer = styled.div`
+  width: 180px;
+  height: 240px;
+  margin-top: 20px;
+  margin-right: 40px;
+  cursor: pointer;
+  img {
+    width: 100%;
+    height: 170px;
+  }
+  @media only screen and (max-width: 894px) {
+    margin-right: 0;
+  }
+`;
+
+export {
   ContentTitle,
   UserContainter,
   UserUSer,
@@ -145,5 +199,9 @@ export default {
   TitleMore,
   Title,
   More,
+  Container,
+  Posts,
+  PostsBody,
+  PostsDefaultMsg,
+  PostContainer,
 };
-
