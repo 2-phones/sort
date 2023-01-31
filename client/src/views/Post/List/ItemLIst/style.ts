@@ -18,12 +18,15 @@ const ItemListBox = styled.div`
   width: 100%;
   flex-wrap: wrap;
   justify-content: center;
+`;
 
-  @media screen and (max-width: 720px) {
-    display: flex;
+const ItemWrapper = styled.div`
+  width: 278px;
+  height: 340px;
+  margin: 10px 10px;
+  img {
     width: 100%;
-    justify-content: center;
-    margin: 0;
+    height: 240px;
   }
 `;
 
@@ -43,4 +46,4 @@ const ViewsBox = styled.div`
   }
 `;
 
-export { ItemContainer, ItemListBox, ViewsBox };
+export { ItemContainer, ItemListBox, ViewsBox, ItemWrapper };
