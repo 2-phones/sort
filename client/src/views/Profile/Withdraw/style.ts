@@ -11,6 +11,8 @@ const Container = styled.div`
 const CustomerContent = styled.div`
   overflow: hidden;
   min-height: 600px;
+  margin-top: 70px;
+  margin-left: 70px;
 `;
 
 const CustomerWithdraw = styled.div`
