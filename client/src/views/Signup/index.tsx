@@ -2,14 +2,10 @@ import React, { useState } from 'react';
 import * as S from './style';
 import { Input } from '../../components/Input/Input';
 import { ButtonUI } from '../../components/Button/Button';
-import { ReactComponent as Kakao } from '../../components/Imgs/kakao.svg';
-import { ReactComponent as Google } from '../../components/Imgs/google.svg';
-import { useInput } from '../../hooks/useInput';
-import { googleOauth, useAuth } from '../../api/auth.api';
+import { useInput } from '../../hooks/post/Input.hook';
 import { useAuthBtnClick, useClick } from '../../hooks/click.hook';
 import { useModal } from '../../hooks/modal.hook';
-import { useAppDispatch, useAppSelector } from '../../hooks/redux.hook';
-import { authType, socialCheck } from '../../redux/Slices/auth.slice';
+import { useAppSelector } from '../../hooks/redux.hook';
 
 const Signup = () => {
   const [userData, changehandler] = useInput();
