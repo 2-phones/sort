@@ -1,19 +1,26 @@
+import { TokenService } from 'src/services/token.service';
 import { PostIdDto, PostStatusDto, UserIdDto } from './../dto/posts/posts.dto';
 import {
+  Body,
   Controller,
   Delete,
   Get,
+  Headers,
   Param,
   Post,
   Put,
   Query,
-  Req,
+  Res,
 } from '@nestjs/common';
 import { PostService } from 'src/services/post.service';
+import { Response } from 'express';
 
 @Controller('/sort/posts')
 export class PostController {
-  constructor(private postService: PostService) {}
+  constructor(
+    private postService: PostService,
+    private readonly tokenService: TokenService,
+  ) {}
 
   @Get()
   async posts() {
@@ -25,23 +32,60 @@ export class PostController {
     return await this.postService.getPostId(post_id);
   }
 
-  @Get('/user')
-  async userPosts(@Param() user_id: UserIdDto) {
-    return await this.postService.getUserPosts(user_id);
-  }
-
   @Get('/status')
   async status(@Query() queryData: PostStatusDto) {
     return await this.postService.getPostStatus(queryData);
   }
 
-  @Put()
-  edit() {
-    return 'put';
+  @Post()
+  async create(
+    @Headers() headers: any,
+    @Body() data: any,
+    @Res() res: Response,
+  ) {
+    try {
+      const access_token = headers['authorization'].split(' ')[1];
+      const { user_id } = await this.tokenService.decodeToken(access_token);
+      const post_data = { user_id, ...data };
+      this.postService.createPost(post_data);
+      return res.status(200).send('success posted');
+    } catch (err) {
+      return res.status(404).send(err);
+    }
   }
 
-  @Delete()
-  delete() {
-    return 'delete';
+  @Put('/:post_id')
+  async edit(
+    @Headers() headers: any,
+    @Body() data: any,
+    @Param('post_id') post_id: string,
+    @Res() res: Response,
+  ) {
+    try {
+      const access_token = headers['authorization'].split(' ')[1];
+      const { user_id } = await this.tokenService.decodeToken(access_token);
+      const id = { user_id, post_id };
+
+      await this.postService.editPost(data, id);
+      return res.status(200).send('success updated');
+    } catch (err) {
+      return res.status(404).send(err);
+    }
+  }
+
+  @Delete('/:post_id')
+  async delete(
+    @Headers() headers: any,
+    @Param('post_id') post_id: string,
+    @Res() res: Response,
+  ) {
+    try {
+      const access_token = headers['authorization'].split(' ')[1];
+      const { user_id } = await this.tokenService.decodeToken(access_token);
+      await this.postService.deletePost(user_id, post_id);
+      return res.status(200).send('success deleted');
+    } catch (err) {
+      return res.status(404).send(err);
+    }
   }
 }
