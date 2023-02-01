@@ -1,24 +1,14 @@
 import React from 'react';
 import Sides from './style';
 import { useNavigate } from 'react-router-dom';
-import { menuChoiceData, menuChoice } from '../../../redux/MYPageSlice';
-import { useDispatch, useSelector } from 'react-redux';
+import {  menuChoice } from '../../../redux/Slices/page.slice';
+import { useAppDispatch, useAppSelector } from '../../../hooks/redux.hook';
 
 const SideBar = () => {
-  const navigate = useNavigate();
-  const arr = [
-    '구매 상품',
-    '판매 상품',
-    '찜 리스트',
-    '내 프로필',
-    '거래 후기',
-    '지역 인증',
-    '회원 탈퇴',
-  ];
-  menuChoiceData;
-  const trademenus = useSelector((state) => state.mypage.trade);
-  const myInfomenus = useSelector((state) => state.mypage.myInfo);
-  const dispatch = useDispatch();
+
+  const trademenus = useAppSelector((state) => state.page.trade);
+  const myInfomenus = useAppSelector((state) => state.page.myInfo);
+  const dispatch = useAppDispatch();
   return (
     <Sides.SideBar>
       <Sides.MypageTitle onClick={() => dispatch(menuChoice(0))}>MY PAGE</Sides.MypageTitle>
