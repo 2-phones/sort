@@ -3,7 +3,7 @@
 .DS_Store
 repository.md
 docs
-dist
+build
 reuselogic
 S3upload
 .vscode
