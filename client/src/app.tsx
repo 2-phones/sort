@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import { store } from './redux/store';
 import Modal from './components/Modal';
 import { motion } from 'framer-motion';
-import AlertModal from './components/Modal/alert';
+import AlertModal from './components/Modal/alert/index';
 
 const App = () => {
   return (
