@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ItemContainer, ViewsBox, ItemListBox, ItemWrapper } from './style';
 import { calculateDate } from '../../../../util/calculateDate';
 import Iteminfo from '../Info/index';
-import PostSkeleton from '../../../../components/Loding/Skeleton/Posts/index';
+import PostSkeleton from '../../../../components/Loding/Skeleton/POSTS/index';
 
 const ItemList = ({ posts, dummyData }: any) => {
   return (
