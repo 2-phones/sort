@@ -1,11 +1,10 @@
 import styled from 'styled-components';
 
 const SideBar = styled.div`
-  position: relative;
   float: left;
   width: 200px;
-  margin-right: 40px;
   padding-bottom: 30px;
+
   @media only screen and (max-width: 960px) {
     height: 23%;
     width: 23%;
@@ -28,7 +27,6 @@ const MypageTitle = styled.h2`
 `;
 
 const Line = styled.div`
-  position: relative;
   margin-top: 15px;
   padding: 7px 0;
   font-size: 14px;
