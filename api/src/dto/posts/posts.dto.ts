@@ -3,6 +3,7 @@ import { IsNotEmpty, IsString, Length } from 'class-validator';
 
 export class PostIdDto {
   @IsString()
+  @IsNotEmpty()
   post_id: string;
 }
 
