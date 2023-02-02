@@ -22,7 +22,7 @@ export class PostsEntity {
   @Column({ type: 'varchar', length: 15, default: null })
   seat_number: string | null;
 
-  @Column({ type: 'varchar', length: 25 })
+  @Column({ type: 'varchar', length: 25, default: null })
   region: string;
 
   @Column({ type: 'varchar', length: 300, default: null })
