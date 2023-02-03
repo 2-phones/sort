@@ -19,22 +19,45 @@ export class PostService {
     return result;
   }
 
-  async getUserPosts(user_id: UserIdDto) {
-    const result = await this.postRepository.selectUserId(user_id);
-
-    if (!result) {
-      throw new NotFoundException(`user_id ${user_id['user_id']} is Not Found`);
-    }
-
-    return result;
-  }
-
   async getPostStatus(queryData: PostStatusDto) {
     const { status } = queryData;
     const result = await this.postRepository.selectStatus({ status });
     if (!result) {
       throw new NotFoundException(`post is Not Found`);
     }
+
+    return result;
+  }
+
+  async createPost(post_data: any) {
+    const { user_id } = post_data;
+
+    if (!user_id) {
+      throw new NotFoundException('user is Not Found');
+    }
+
+    const result = await this.postRepository.create(post_data);
+
+    return result;
+  }
+
+  async editPost(post_data: any, id: any) {
+    const { user_id } = id;
+
+    if (!user_id) {
+      throw new NotFoundException('user is Not Found');
+    }
+
+    const result = await this.postRepository.update(post_data, id);
+    return result;
+  }
+
+  async deletePost(user_id: string, post_id: string) {
+    if (!user_id) {
+      throw new NotFoundException('user is Not Found');
+    }
+
+    const result = await this.postRepository.deleteQuery(user_id, post_id);
 
     return result;
   }
