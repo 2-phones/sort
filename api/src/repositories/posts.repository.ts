@@ -51,10 +51,11 @@ export class PostsRepository {
       .getRawMany();
   }
 
-  async selectUserId(user_id: UserIdDto): Promise<any> {
+  async selectUserId(userID: UserIdDto): Promise<any> {
     return this.postsRepository
       .createQueryBuilder()
       .select([
+        'post_id',
         'title',
         'body',
         'price',
@@ -66,8 +67,8 @@ export class PostsRepository {
         'created_at',
         'views',
       ])
-      .where('user_id = :user_id ', user_id)
-      .getMany();
+      .where('user_id = :user_id ', userID)
+      .getRawMany();
   }
 
   async selectStatus(status: PostStatusDto): Promise<any> {
@@ -88,5 +89,36 @@ export class PostsRepository {
       ])
       .where('status = :status', status)
       .getRawMany();
+  }
+
+  async create(post_data: any) {
+    const column = Object.keys(post_data);
+    return await this.postsRepository
+      .createQueryBuilder()
+      .insert()
+      .into(PostsEntity, column)
+      .values(post_data)
+      .execute();
+  }
+
+  async update(post_data: any, id: any) {
+    const { user_id } = id;
+    const { post_id } = id;
+    return this.postsRepository
+      .createQueryBuilder()
+      .update()
+      .set(post_data)
+      .where('user_id = :user_id ', { user_id })
+      .andWhere(`post_id = :post_id`, { post_id })
+      .execute();
+  }
+
+  async deleteQuery(user_id: string, post_id: string) {
+    return this.postsRepository
+      .createQueryBuilder()
+      .delete()
+      .where('user_id = :user_id ', { user_id })
+      .andWhere(`post_id = :post_id`, { post_id })
+      .execute();
   }
 }
