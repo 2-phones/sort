@@ -4,6 +4,7 @@
 repository.md
 docs
 build
+dist
 reuselogic
 S3upload
 .vscode
