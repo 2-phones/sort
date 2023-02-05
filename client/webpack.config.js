@@ -15,7 +15,7 @@ module.exports = {
   devtool: 'eval',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].js',
+    filename: '[name].[contenthash].js',
     publicPath: '/',
   },
   resolve: {
