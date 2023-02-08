@@ -1,4 +1,4 @@
-## API
+## 📚 API
 
 <details>
   <summary>Auth</summary>
@@ -17,7 +17,7 @@
 </details>
 <br/>
 
-## DB
+## 🗃 DB
 |table|description|
 |-|-|
 |Users|회원 테이블|
@@ -28,7 +28,7 @@
 <img width=700px height=400px src="https://user-images.githubusercontent.com/87120463/217428567-bb6a6466-4394-4e75-9493-42dd118aef79.png"/>
 <br/><br/>
 
-## Architecture
+## 🗂 Architecture
 <img width=600px height=400px src="https://user-images.githubusercontent.com/87120463/217426292-fd87c8a0-f85f-4c46-ae25-6cb00f528081.png"/>
 
 <details>
