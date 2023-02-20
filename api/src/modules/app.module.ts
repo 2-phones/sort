@@ -1,3 +1,4 @@
+import { ChatModule } from './chat.module';
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
@@ -15,6 +16,7 @@ import { TokenModule } from './token.module';
     PostModule,
     UserModule,
     TokenModule,
+    ChatModule,
   ],
   controllers: [],
   providers: [],
