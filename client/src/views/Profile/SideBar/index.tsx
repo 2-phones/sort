@@ -2,7 +2,7 @@ import React from 'react';
 import Sides from './style';
 import { useNavigate } from 'react-router-dom';
 import {  menuChoice } from '../../../redux/Slices/page.slice';
-import { useAppDispatch, useAppSelector } from '../../../hooks/redux.hook';
+import { useAppDispatch, useAppSelector } from '../../../hooks/common/redux.hook';
 
 const SideBar = () => {
 

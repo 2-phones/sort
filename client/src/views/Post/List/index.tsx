@@ -4,7 +4,7 @@ import ItemList from './ItemLIst/index';
 import ViewMore from './ViewMore/index';
 import FilterBar from './PostsFilter';
 import { useGetPosts } from '../../../hooks/post/posts.hook';
-import { useAppSelector } from '../../../hooks/redux.hook';
+import { useAppSelector } from '../../../hooks/common/redux.hook';
 
 const ItemsMain = () => {
   const { posts } = useGetPosts('');

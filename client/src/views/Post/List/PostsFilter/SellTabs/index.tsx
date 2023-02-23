@@ -1,5 +1,5 @@
 import React from 'react';
-import { useAppDispatch, useAppSelector } from '../../../../../hooks/redux.hook';
+import { useAppDispatch, useAppSelector } from '../../../../../hooks/common/redux.hook';
 import { isFocues } from '../../../../../redux/Slices/posts.slice';
 import { SellType } from './style';
 

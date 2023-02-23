@@ -2,15 +2,15 @@ import React from 'react';
 import Writes from './WriteMainStyle';
 import { BsCameraFill } from 'react-icons/bs';
 import Draws from '../../Profile/Withdraw/style';
-import { useInput } from '../../../hooks/post/Input.hook';
+import { usePostInput } from '../../../hooks/post/Input.hook';
 import { useEditPost, useGetPostId } from '../../../hooks/post/posts.hook';
-import { useClick } from '../../../hooks/click.hook';
+import { useClick } from '../../../hooks/common/click.hook';
 import { useParams } from 'react-router-dom';
 import { dateChange } from '../../../util/dateChange';
-import { useAppSelector } from '../../../hooks/redux.hook';
+import { useAppSelector } from '../../../hooks/common/redux.hook';
 
 const EditMain = () => {
-  const [userData, changehandler] = useInput();
+  const [userData, changehandler] = usePostInput();
   const { isClick, oneClickHandler } = useClick();
   const { id } = useParams();
   const { post } = useGetPostId(id);

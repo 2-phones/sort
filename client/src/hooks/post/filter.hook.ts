@@ -1,4 +1,4 @@
-import { useAppSelector } from '../redux.hook';
+import { useAppSelector } from '../common/redux.hook';
 
 export const useSort = (posts: []) => {
   const dropdownList = useAppSelector((state) => state.posts.dropdownList);

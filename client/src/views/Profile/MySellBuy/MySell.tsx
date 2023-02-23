@@ -3,7 +3,7 @@ import * as S from './style';
 import { BasicBtn } from '../../../components/Button/Button';
 import SubPostComponent from '../../../components/post/subPost';
 
-import {useAppSelector } from '../../../hooks/redux.hook';
+import {useAppSelector } from '../../../hooks/common/redux.hook';
 import { useMyPost } from '../../../hooks/user/post.hook';
 
 function MySell({ posts }: any) {

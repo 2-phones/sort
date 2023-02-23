@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { ButtonUI } from '../../components/Button/Button';
 import { Input } from '../../components/Input/Input';
 import * as S from './style';
-import { useInput } from '../../hooks/post/Input.hook';
-import { useModal } from '../../hooks/modal.hook';
-import { useAppDispatch, useAppSelector } from '../../hooks/redux.hook';
-import { useAuthBtnClick } from '../../hooks/click.hook';
+import { usePostInput } from '../../hooks/post/Input.hook';
+import { useModal } from '../../hooks/common/modal.hook';
+import { useAppDispatch, useAppSelector } from '../../hooks/common/redux.hook';
+import { useAuthBtnClick } from '../../hooks/common/click.hook';
 
 const Login = () => {
-  const [userData, changehandler] = useInput();
+  const [userData, changehandler] = usePostInput();
   const buttons = useAppSelector((state) => state.auth.buttonInfo);
   const dispatch = useAppDispatch();
   const [InputTypes, setInPutTypes] = useState([

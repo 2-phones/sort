@@ -1,4 +1,4 @@
-import { useAppDispatch, useAppSelector } from './../redux.hook';
+import { useAppDispatch, useAppSelector } from './../common/redux.hook';
 import { useNavigate } from 'react-router-dom';
 import { useDeletePost } from '../post/posts.hook';
 import { addAlertMsg, alertModalHandler } from '../../redux/Slices/modal.slice';

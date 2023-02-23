@@ -1,5 +1,5 @@
 import { PostsType } from '../../redux/InitialState/posts.initialState';
-import { useAppSelector } from '../redux.hook';
+import { useAppSelector } from '../common/redux.hook';
 import { useEffect, useState } from 'react';
 import { createPost, getPosts, editPost, deletePost } from '../../api/posts.api';
 import { useSort } from './filter.hook';

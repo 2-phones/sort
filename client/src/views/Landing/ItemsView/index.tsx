@@ -3,7 +3,7 @@ import Lands from './style';
 import { RightIcon } from '../../../components/Icons/Icons';
 import { BasicBtn } from '../../../components/Button/Button';
 import { useNavigate } from 'react-router-dom';
-import { useAppSelector } from '../../../hooks/redux.hook';
+import { useAppSelector } from '../../../hooks/common/redux.hook';
 import LandingPostSkeleton from '../../../components/Loding/Skeleton/LandingPosts';
 
 const ItemsView = ({ posts }: any) => {

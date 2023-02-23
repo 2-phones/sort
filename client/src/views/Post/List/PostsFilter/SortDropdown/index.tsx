@@ -1,7 +1,7 @@
 import React from 'react';
 import { DownIcon } from '../../../../../components/Icons/Icons';
-import { useAppDispatch, useAppSelector } from '../../../../../hooks/redux.hook';
-import { useClick } from '../../../../../hooks/click.hook';
+import { useAppDispatch, useAppSelector } from '../../../../../hooks/common/redux.hook';
+import { useClick } from '../../../../../hooks/common/click.hook';
 import { openDropbar, selectSort } from '../../../../../redux/itemslice';
 import { dropDownSelect } from '../../../../../redux/Slices/posts.slice';
 import * as S from './style';

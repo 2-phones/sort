@@ -2,7 +2,7 @@ import React from 'react';
 import { ViewMoreSection, ViewMoreBtn } from './style';
 import { BasicBtn } from '../../../../components/Button/Button';
 import { DownIcon } from '../../../../components/Icons/Icons';
-import { useAppDispatch } from '../../../../hooks/redux.hook';
+import { useAppDispatch } from '../../../../hooks/common/redux.hook';
 import { viewCount } from '../../../../redux/Slices/posts.slice';
 
 const ViewMore = () => {

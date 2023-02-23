@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { useAppSelector } from '../../hooks/redux.hook';
+import { useAppSelector } from '../../hooks/common/redux.hook';
 import { selltabsType, DropdownType } from '../InitialState/posts.initialState';
 
 interface InitialState {

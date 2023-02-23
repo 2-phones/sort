@@ -5,7 +5,7 @@ interface AuthType {
   email: React.ChangeEvent<HTMLInputElement>;
 }
 
-export const useInput = () => {
+export const usePostInput = () => {
   const [userData, setUserData] = useState<any>({});
 
   const changehandler = (e: React.ChangeEvent<HTMLInputElement>) => {

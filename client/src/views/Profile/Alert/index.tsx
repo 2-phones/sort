@@ -1,6 +1,6 @@
 import React from 'react';
 import { BasicBtn } from '../../../components/Button/Button';
-import { useAppDispatch, useAppSelector } from '../../../hooks/redux.hook';
+import { useAppDispatch, useAppSelector } from '../../../hooks/common/redux.hook';
 import { useMyPost } from '../../../hooks/user/post.hook';
 import { alertModalHandler, executeHandler } from '../../../redux/Slices/modal.slice';
 import * as S from './style';

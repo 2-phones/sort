@@ -2,14 +2,14 @@ import React from 'react';
 import Writes from './WriteMainStyle';
 import { BsCameraFill } from 'react-icons/bs';
 import Draws from '../../Profile/Withdraw/style';
-import { useInput } from '../../../hooks/post/Input.hook';
+import { usePostInput } from '../../../hooks/post/Input.hook';
 import { useCreatePost } from '../../../hooks/post/posts.hook';
-import { useValidate } from '../../../hooks/validation.hook';
-import { useClick } from '../../../hooks/click.hook';
-import { useAppSelector } from '../../../hooks/redux.hook';
+import { useValidate } from '../../../hooks/common/validation.hook';
+import { useClick } from '../../../hooks/common/click.hook';
+import { useAppSelector } from '../../../hooks/common/redux.hook';
 
 const WriteMain = () => {
-  const [userData, changehandler] = useInput();
+  const [userData, changehandler] = usePostInput();
   const { postCheck, check } = useValidate();
   const { isClick, oneClickHandler } = useClick();
   const categoires = useAppSelector((state) => state.posts.categories);

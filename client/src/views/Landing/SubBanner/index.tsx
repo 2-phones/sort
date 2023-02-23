@@ -1,5 +1,5 @@
 import React from 'react';
-import { useAppSelector } from '../../../hooks/redux.hook';
+import { useAppSelector } from '../../../hooks/common/redux.hook';
 import { SubBanner_Container, Featuree } from './style';
 
 const SubBanner = () => {
