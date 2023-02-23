@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, ModalBackground, ModalWindow } from './style';
-import { useModal } from '../../hooks/modal.hook';
+import { useModal } from '../../hooks/common/modal.hook';
 
 const Modal = () => {
   const { Component, clickHandler } = useModal();

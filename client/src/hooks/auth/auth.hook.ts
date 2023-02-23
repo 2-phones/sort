@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthData, createUser, signup, login, tokensReissue, kakaoAuthToken } from '../../api/auth.api';
-import { useAppSelector } from '../redux.hook';
+import { useAppSelector } from '../common/redux.hook';
 
 export const useOauth = (access_token: string, social_type: string) => {
   const data = { access_token, social_type };

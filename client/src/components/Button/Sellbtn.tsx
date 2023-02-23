@@ -1,7 +1,7 @@
 import React from 'react';
 import { SellbtnComponent } from './Button';
 import { useNavigate } from 'react-router-dom';
-import { useModal } from '../../hooks/modal.hook';
+import { useModal } from '../../hooks/common/modal.hook';
 import { tokenCheck } from '../../util/tokenCheck';
 import { PostIcon } from '../Imgs/imgExport';
 

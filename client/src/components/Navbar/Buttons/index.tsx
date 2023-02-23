@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import * as S from '../style';
 import * as NavIcon from '../../Imgs/imgExport';
-import { useModal } from '../../../hooks/modal.hook';
+import { useModal } from '../../../hooks/common/modal.hook';
 import { tokenCheck } from '../../../util/tokenCheck';
 
 const NavButtons = () => {

@@ -6,7 +6,7 @@ export const useChat = () => {
 
   const chatHandle = async () => {
     try {
-      const result = socket.emit('message', '');
+      const result = socket.emit('hello', { data: '채팅메세지' });
       setRoom(result);
       console.log(result);
     } catch (err: any) {

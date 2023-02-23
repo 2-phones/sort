@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useModal } from '../../../hooks/modal.hook';
+import { useModal } from '../../../hooks/common/modal.hook';
 import * as S from '../style';
 
 const NavLogin = () => {

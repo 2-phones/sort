@@ -1,6 +1,6 @@
-import { googleOauth } from './../api/auth.api';
+import { googleOauth } from '../../api/auth.api';
 import { useState } from 'react';
-import { kakaoAuthCode } from '../api/auth.api';
+import { kakaoAuthCode } from '../../api/auth.api';
 
 interface ClickHooks {
   isClick: boolean;

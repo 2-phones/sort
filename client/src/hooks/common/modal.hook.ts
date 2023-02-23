@@ -1,6 +1,6 @@
-import { openHandler } from '../redux/Slices/modal.slice';
-import Login from '../views/Login';
-import Signup from '../views/Signup';
+import { openHandler } from '../../redux/Slices/modal.slice';
+import Login from '../../views/Login';
+import Signup from '../../views/Signup';
 import { useAppSelector, useAppDispatch } from './redux.hook';
 
 export const useModal = () => {
