@@ -2,7 +2,7 @@ import React from 'react';
 import Writes from './WriteMainStyle';
 import { BsCameraFill } from 'react-icons/bs';
 import Draws from '../../Profile/Withdraw/style';
-import { usePostInput } from '../../../hooks/post/Input.hook';
+import { usePostInput } from '../../../hooks/post/postInput.hook';
 import { useCreatePost } from '../../../hooks/post/posts.hook';
 import { useValidate } from '../../../hooks/common/validation.hook';
 import { useClick } from '../../../hooks/common/click.hook';
