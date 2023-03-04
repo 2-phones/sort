@@ -1,15 +1,21 @@
 import React from 'react';
 import { BasicBtn } from '../../../../components/Button/Button';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { likeFeature } from '../../../../redux/itemslice';
 import { HeartIcon, NonHeartIcon } from '../../../../components/Icons/Icons';
 import { Detail_ItemInfo, InfoTop, InfoBottom, StartDate, EndDate, Seat, Tags, Btn } from './style';
 import { useAppDispatch, useAppSelector } from '../../../../hooks/common/redux.hook';
+import { useCreateChat } from '../../../../hooks/chat/chat.hook';
 
 const DetailItemInfo = ({ title, price, createdDate, endDate, seat, region }) => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const like = useAppSelector((state) => state.items.isLike);
+  const { id } = useParams();
+
+  const sendChat = (post_id: string) => {
+    useCreateChat(post_id);
+  };
 
   return (
     <Detail_ItemInfo>
@@ -48,7 +54,7 @@ const DetailItemInfo = ({ title, price, createdDate, endDate, seat, region }) =>
             </BasicBtn>
           </div>
           <div className="top_btn">
-            <BasicBtn background="#385275" onClick={() => navigate('/chat')}>
+            <BasicBtn background="#385275" onClick={() => sendChat(id)}>
               메세지 보내기
             </BasicBtn>
           </div>
