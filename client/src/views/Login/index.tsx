@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ButtonUI } from '../../components/Button/Button';
 import { Input } from '../../components/Input/Input';
 import * as S from './style';
-import { usePostInput } from '../../hooks/post/Input.hook';
+import { usePostInput } from '../../hooks/post/postInput.hook';
 import { useModal } from '../../hooks/common/modal.hook';
 import { useAppDispatch, useAppSelector } from '../../hooks/common/redux.hook';
 import { useAuthBtnClick } from '../../hooks/common/click.hook';
