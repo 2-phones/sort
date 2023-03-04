@@ -26,3 +26,7 @@ export const KaKaoAPI = axios.create({
     'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
   },
 });
+
+export const ChatAPI = axios.create({
+  baseURL: process.env.CHAT_API,
+});
