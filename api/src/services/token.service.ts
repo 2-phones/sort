@@ -56,8 +56,14 @@ export class TokenService {
   }
 
   async decodeToken(tokens: string) {
-    return this.jwtService.verify(tokens, {
+    const { user_id } = this.jwtService.verify(tokens, {
       secret: process.env.SECRETKEY,
     });
+
+    if (!user_id) {
+      throw new Error('accessToken is not found');
+    }
+
+    return user_id;
   }
 }
