@@ -33,7 +33,7 @@ export class AuthService {
 
     const user_id = createid();
     const user_data = { user_id, ...data };
-    const result = await this.usersRepository.insert(user_data);
+    const result = await this.usersRepository.insertUser(user_data);
 
     return result;
   }
@@ -48,7 +48,7 @@ export class AuthService {
 
     const user_id = createid();
     const user_data = { user_id, ...socialdata };
-    const result = await this.usersRepository.insert(user_data);
+    const result = await this.usersRepository.insertUser(user_data);
 
     return result;
   }
