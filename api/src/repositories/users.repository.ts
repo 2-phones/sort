@@ -44,7 +44,7 @@ export class UsersRepository {
       .getRawOne();
   }
 
-  async insert(user_data: any): Promise<any> {
+  async insertUser(user_data: any): Promise<any> {
     const column = Object.keys(user_data);
     return this.usersRepository
       .createQueryBuilder()
