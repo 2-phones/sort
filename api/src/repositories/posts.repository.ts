@@ -71,6 +71,7 @@ export class PostsRepository {
       .getRawMany();
   }
 
+  //판매 상태 조회
   async selectStatus(status: PostStatusDto): Promise<any> {
     return await this.postsRepository
       .createQueryBuilder()
