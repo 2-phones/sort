@@ -1,3 +1,4 @@
+import { EventsModule } from './events.module';
 import { ChatModule } from './chat.module';
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
@@ -17,6 +18,7 @@ import { TokenModule } from './token.module';
     UserModule,
     TokenModule,
     ChatModule,
+    EventsModule,
   ],
   controllers: [],
   providers: [],
