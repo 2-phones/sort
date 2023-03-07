@@ -5,20 +5,31 @@ import { likeFeature } from '../../../../redux/itemslice';
 import { HeartIcon, NonHeartIcon } from '../../../../components/Icons/Icons';
 import { Detail_ItemInfo, InfoTop, InfoBottom, StartDate, EndDate, Seat, Tags, Btn } from './style';
 import { useAppDispatch, useAppSelector } from '../../../../hooks/common/redux.hook';
-import { useCreateChat } from '../../../../hooks/chat/chat.hook';
+import { tokenCheck } from '../../../../util/tokenCheck';
+import { useModal } from '../../../../hooks/common/modal.hook';
+import Chat from '../../../../components/chat';
+import { ProductInterface } from '../../../../interfaces/posts/post.interface';
+import { addPostId } from '../../../../redux/Slices/posts.slice';
+import { useClick } from '../../../../hooks/common/click.hook';
 
-const DetailItemInfo = ({ title, price, createdDate, endDate, seat, region }) => {
+const DetailItemInfo = ({ title, price, createdDate, endDate, seat, region }: ProductInterface) => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const like = useAppSelector((state) => state.items.isLike);
   const { id } = useParams();
+  const token = tokenCheck();
+  const { clickHandler } = useModal();
+  const { isClick, handleClick } = useClick();
 
-  const sendChat = (post_id: string) => {
-    useCreateChat(post_id);
+  const sendChat = (post_id: string | undefined) => {
+    !token ? clickHandler('login') : null;
+    dispatch(addPostId(post_id));
+    handleClick();
   };
 
   return (
     <Detail_ItemInfo>
+      {isClick && token ? <Chat /> : null}
       <InfoTop>
         <p className="info_title">{title}</p>
         <div className="item_price">
@@ -29,17 +40,14 @@ const DetailItemInfo = ({ title, price, createdDate, endDate, seat, region }) =>
       <InfoBottom>
         <StartDate>
           <p className="info_title">등록</p>
-
           <p className="infor_data">{createdDate}</p>
         </StartDate>
         <EndDate>
           <p className="info_title">기간</p>
-
           <p className="infor_data">{endDate}</p>
         </EndDate>
         <Seat>
           <p className="info_title">좌석</p>
-
           <p className="infor_data">{seat}</p>
         </Seat>
         <Seat>
