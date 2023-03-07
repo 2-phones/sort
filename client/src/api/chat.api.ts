@@ -1,5 +1,5 @@
 import { ChatAPI } from '../config/api.config';
-import { ChatDataInterface } from '../interfaces/chat.inteface';
+import { ChatDataInterface } from '../interfaces/chat/chat.inteface';
 
 export const createChat = async (chatData: ChatDataInterface) => {
   const access_token = localStorage.getItem('access_token');
