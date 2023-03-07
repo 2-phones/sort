@@ -5,13 +5,13 @@ import { kakaoAuthCode } from '../../api/auth.api';
 interface ClickHooks {
   isClick: boolean;
   oneClickHandler: () => void;
-  clickHandler: () => void;
+  handleClick: () => void;
 }
 
 export const useClick = (): ClickHooks => {
   const [isClick, setClick] = useState(false);
 
-  const clickHandler = () => {
+  const handleClick = () => {
     setClick(!isClick);
   };
 
@@ -19,7 +19,7 @@ export const useClick = (): ClickHooks => {
     setClick(true);
   };
 
-  return { isClick, clickHandler, oneClickHandler };
+  return { isClick, handleClick, oneClickHandler };
 };
 
 export const useAuthBtnClick = (social: string, auth: string) => {
