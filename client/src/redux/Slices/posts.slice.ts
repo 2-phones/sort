@@ -12,6 +12,7 @@ interface InitialState {
   statusAPI: string;
   createValues: string;
   categories: string[];
+  postId: string;
 }
 
 const initialState: InitialState = {
@@ -33,6 +34,7 @@ const initialState: InitialState = {
   views: 8,
   statusAPI: `status?status=판매중`,
   createValues: '',
+  postId: '',
 };
 
 // {id : 0 ,type : '정확순'},{id : 1 ,type : '인기순'},{id : 2 ,type : '최신순'},{id : 3 ,type : '오래된순'}
@@ -57,8 +59,12 @@ const PostsSlice = createSlice({
     createPost: (state, aciton) => {
       state.createValues = aciton.payload;
     },
+
+    addPostId: (state, action) => {
+      state.postId = action.payload;
+    },
   },
 });
 
 export default PostsSlice;
-export const { isFocues, viewCount, dropDownSelect, createPost } = PostsSlice.actions;
+export const { isFocues, viewCount, dropDownSelect, createPost, addPostId } = PostsSlice.actions;
