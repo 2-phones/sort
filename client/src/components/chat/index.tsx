@@ -1,17 +1,17 @@
 import React from 'react';
-import { useChat } from '../../hooks/chat/chat.hook';
+import { useChat, useConnectToChat } from '../../hooks/chat/chat.hook';
 import { useInput } from '../../hooks/common/input.hook';
+import { useAppSelector } from '../../hooks/common/redux.hook';
 import * as S from './style';
 
 const Chat = () => {
   const { changeHandler, inputData } = useInput();
   const { chatsend, chatHandle } = useChat(inputData);
-
+  const { postId } = useAppSelector((state) => state.posts);
   const clickHandler = (data: any) => {
-    chatHandle();
+    useConnectToChat(postId);
   };
 
-  console.log(inputData);
   return (
     <S.Container>
       <S.Window>
