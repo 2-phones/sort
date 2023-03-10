@@ -9,7 +9,7 @@ const Chat = () => {
   const { chatsend, chatHandle } = useChat(inputData);
   const { postId } = useAppSelector((state) => state.posts);
   const clickHandler = (data: any) => {
-    useConnectToChat(postId);
+    data ? useConnectToChat(data) : null;
   };
 
   return (
@@ -20,7 +20,7 @@ const Chat = () => {
             <p className="chat_content">채팅 내용</p>
           </S.Title>
           <input onChange={changeHandler} />
-          <button onClick={() => clickHandler(inputData)}>버튼</button>
+          <button onClick={() => clickHandler('postId')}>버튼</button>
         </S.ChatContent>
       </S.Window>
     </S.Container>

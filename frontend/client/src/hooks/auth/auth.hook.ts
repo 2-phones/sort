@@ -41,7 +41,7 @@ export const useLogin = (data: object, type: string) => {
         location.replace('/main');
       } catch (err: any) {
         const message = err.response.data;
-        window.alert(message.message);
+        window.alert(message?.message);
         location.replace('/main');
       }
     };

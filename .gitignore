@@ -1,0 +1,10 @@
+.DS_Store
+repository.md
+docs
+build
+dist
+reuselogic
+S3upload
+.vscode
+node_modules
+.env*

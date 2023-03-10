@@ -25,15 +25,13 @@ export const useChat = (chatMessage: any) => {
 };
 
 export const useConnectToChat = (post_id: string) => {
-  // const post_id = useAppSelector((state) => state.posts.postId);
   const chatData = { post_id, message: 'gee' };
   const [receiveMsg, setReceiveMsg] = useState('');
   const promisecall = async () => {
     try {
       const result = await createChat(chatData);
       const { post_id, message } = result?.data;
-      useSendMessage(post_id, message);
-
+      // useSendMessage(post_id, message);
       console.log(result);
     } catch (err) {
       console.log(err);
