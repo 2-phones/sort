@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  api:
+    image: eunsoo2/api:ver2
+    container_name: sort
+    build:
+      dockerfile: Dockerfile
+      context: ./api
+    env_file:
+      - ./api/.env
+    ports:
+      - 8080:8080
+    restart: always
