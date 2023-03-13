@@ -149,7 +149,7 @@
   
 - 프로젝트 초기 서버와 통신을 시도할 때, **`No ‘Access-Control-Allow-Origin’`** 에러가 발생하여 CORS 설정을 모두 허용으로 변경하였습니다. 
 - 이후 JWT 토큰 인증 방식을 사용하면서 **`wildcard ’*’ when the request’s credentials mode is ‘include`** 에러가 발생했습니다. 
-- 이 과정에서 클라이언트 도메인과 서버 CORS 설정이 일치해야 한다는 것과 모두 허용 설정은 보안상 문제가 발생할 수 있음을 깨달았고,<br> 
+- 이 과정에서 클라이언트 도메인과 서버 CORS 설정이 일치해야 한다는 것과 모두 허용 설정은 보안상 문제가 발생할 수 있음을 깨달았고, <br> 
   **`credentials = true`** 설정 과 도메인 주소를 명확히 입력하여 CORS 문제를 해결하였습니다.
   
 </details>
