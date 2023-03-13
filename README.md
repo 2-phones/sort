@@ -83,7 +83,7 @@
 구매하고자 하는 상품을 채팅을 통해 거래가 이루어집니다.
 
 <details>
-  <summary><b>📷 &nbsp; 화면구성</b> </summary>
+  <summary><b>화면구성</b> </summary>
   
   <br>
   
@@ -103,7 +103,7 @@
 
 
 <details>
-  <summary><b> &nbsp; 주요기능</b> </summary>
+  <summary><b>주요기능</b> </summary>
 
 ### 로그인기능
   
@@ -133,18 +133,18 @@
   
   |table|description|
 |-|-|
-|Users|회원 테이블|
 |Posts|게시물 테이블|
+|Users|회원 테이블|
 |Refresh_Tokens| 리프레시토큰 테이블|
 
-<img width=700px height=400px src="https://user-images.githubusercontent.com/87120463/217428567-bb6a6466-4394-4e75-9493-42dd118aef79.png"/>
+<img width=700px height=400px src="https://user-images.githubusercontent.com/87120463/224711081-d2f14d0a-f1a1-4c4a-bf37-33b342e92614.png"/>
 <br/><br/>
   
 ## 5. 아키텍처
   
 <img width=800px height=400px src="https://user-images.githubusercontent.com/87120463/224270630-7c00bd0e-5c71-4699-ab79-e7b8fc6ff64a.png"/>
 
-  ### 디렉토리 구조
+  ### 🗂 디렉토리 구조
   
 <details>
   <summary><b>프론트엔드</b></summary>
