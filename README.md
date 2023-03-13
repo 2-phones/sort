@@ -22,15 +22,35 @@
 <br>
 <br>
 
-
 ## 🛠 Stack
 
-### 개발
-<b>`TypeScript`, `React 18`,  `Redux-Toolkit`, `Styled-Components`,`Webpack` , `Babel`</b>
+<b>`Frontend`</b>
+
 <br>
 
-### 배포
-<b>`AWS(EC2,Route53)` , `Docker`, `Nginx`</b>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='https://user-images.githubusercontent.com/87120463/224665094-7111ede9-8bfd-4307-b619-82f3675ae41f.png' width='70px' height='80px'/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='https://user-images.githubusercontent.com/87120463/224654667-0783e1e3-a391-4dc4-be59-45ac23eafae1.png' width='70px' height='80px'/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='https://user-images.githubusercontent.com/87120463/224654673-a91c63a9-4f7c-4c81-9e14-4415df59ff5b.png' width='90px' height='80px'/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='https://user-images.githubusercontent.com/87120463/224654674-8aad6297-6c7e-4ec0-bee8-a88c2d8d954c.png' width='70px' height='80px'/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='https://user-images.githubusercontent.com/87120463/224655985-a9e75fe2-a3f1-44a7-8b55-9d8224634646.png' width='70px' height='80px'/>
+
+<br>
+
+<b>`Backend`</b>
+
+<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='https://user-images.githubusercontent.com/87120463/224654660-94449788-273a-4824-a9de-82ea5891793a.png' width='70px' height='80px'/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='https://user-images.githubusercontent.com/87120463/224654678-32252577-4080-4052-9103-331e9196b42e.png' width='70px' height='80px'/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='https://user-images.githubusercontent.com/87120463/224654685-bda1eccf-70d1-4702-a313-dc5d24207905.png' width='70px' height='80px'/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='https://user-images.githubusercontent.com/87120463/224655981-95369949-b889-4364-a77c-9f1b98e66828.png' width='70px' height='80px'/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='https://user-images.githubusercontent.com/87120463/224654675-e063cf41-45fe-4bf2-afb2-fc5a039a688f.png' width='70px' height='80px'/>
+
+<br>
+
+<b>`Deploy`</b>
+
+<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='https://user-images.githubusercontent.com/87120463/224660261-add5d00a-88cc-4b75-82b0-8e4ca52113b5.png' width='70px' height='80px'/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='https://user-images.githubusercontent.com/87120463/224661642-503d43b0-4a4a-4108-8da1-de1573721317.png' width='70px' height='80px'/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='https://user-images.githubusercontent.com/87120463/224661925-d9dbd942-d8ec-432b-9e98-ae7e01386387.png' width='70px' height='80px'/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='https://user-images.githubusercontent.com/87120463/224661643-7ed27ea2-afdd-40da-b416-f21c9099ec06.png' width='70px' height='80px'/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='https://user-images.githubusercontent.com/87120463/224655991-4f640a09-6f91-4f0f-8bf6-1b7712494fd5.png' width='70px' height='80px'/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='https://user-images.githubusercontent.com/87120463/224655989-e348152e-079f-4e5f-8928-1de82a634283.png' width='70px' height='80px'/>
+
+
+<!-- |Frontend|Backend|Deploy|
+|-|-|-|
+|<br><img src='https://user-images.githubusercontent.com/87120463/224665094-7111ede9-8bfd-4307-b619-82f3675ae41f.png' width='70px' height='80px'/><img src='https://user-images.githubusercontent.com/87120463/224654667-0783e1e3-a391-4dc4-be59-45ac23eafae1.png' width='70px' height='80px'/>&nbsp;&nbsp;&nbsp;&nbsp;<img src='https://user-images.githubusercontent.com/87120463/224654673-a91c63a9-4f7c-4c81-9e14-4415df59ff5b.png' width='90px' height='80px'/><img src='https://user-images.githubusercontent.com/87120463/224654674-8aad6297-6c7e-4ec0-bee8-a88c2d8d954c.png' width='70px' height='80px'/><img src='https://user-images.githubusercontent.com/87120463/224655985-a9e75fe2-a3f1-44a7-8b55-9d8224634646.png' width='70px' height='80px'/>|<img src='https://user-images.githubusercontent.com/87120463/224654660-94449788-273a-4824-a9de-82ea5891793a.png' width='70px' height='80px'/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='https://user-images.githubusercontent.com/87120463/224654678-32252577-4080-4052-9103-331e9196b42e.png' width='70px' height='80px'/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='https://user-images.githubusercontent.com/87120463/224654685-bda1eccf-70d1-4702-a313-dc5d24207905.png' width='70px' height='80px'/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='https://user-images.githubusercontent.com/87120463/224655981-95369949-b889-4364-a77c-9f1b98e66828.png' width='70px' height='80px'/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='https://user-images.githubusercontent.com/87120463/224654675-e063cf41-45fe-4bf2-afb2-fc5a039a688f.png' width='70px' height='80px'/>|<img src='https://user-images.githubusercontent.com/87120463/224660261-add5d00a-88cc-4b75-82b0-8e4ca52113b5.png' width='70px' height='80px'/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='https://user-images.githubusercontent.com/87120463/224661642-503d43b0-4a4a-4108-8da1-de1573721317.png' width='70px' height='80px'/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='https://user-images.githubusercontent.com/87120463/224661925-d9dbd942-d8ec-432b-9e98-ae7e01386387.png' width='70px' height='80px'/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='https://user-images.githubusercontent.com/87120463/224661643-7ed27ea2-afdd-40da-b416-f21c9099ec06.png' width='70px' height='80px'/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='https://user-images.githubusercontent.com/87120463/224655991-4f640a09-6f91-4f0f-8bf6-1b7712494fd5.png' width='70px' height='80px'/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='https://user-images.githubusercontent.com/87120463/224655989-e348152e-079f-4e5f-8928-1de82a634283.png' width='70px' height='80px'/>| -->
+
 
 <br/>
 
