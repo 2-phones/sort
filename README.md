@@ -24,6 +24,8 @@
 
 ## 🛠 Stack
 
+<br>
+
 <b>`Frontend`</b>
 
 <br>
