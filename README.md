@@ -4,6 +4,9 @@
 
 ### sort v2.0.3 티켓 중고 거래 웹 서비스
 
+- 기 간 : 2023.02 ~ 2023. 03
+- 인 원 : 개인 프로젝트
+
 - [sort v1.0.0](https://github.com/codestates-seb/seb39_main_018)
 <br/><br/>
 
