@@ -5,7 +5,6 @@
 ### sort v2.0.3 티켓 중고 거래 웹 서비스
 
 - [sort v1.0.0](https://github.com/codestates-seb/seb39_main_018)
-- [Server](https://github.com/Sort-Project/Server)
 <br/><br/>
 
 
