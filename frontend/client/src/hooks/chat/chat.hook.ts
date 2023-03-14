@@ -27,7 +27,8 @@ export const useChat = (chatMessage: any) => {
 export const useConnectToChat = (post_id: string) => {
   const chatData = { post_id, message: 'gee' };
   const [receiveMsg, setReceiveMsg] = useState('');
-  const promisecall = async () => {
+
+  const connectToChat = async () => {
     try {
       const result = await createChat(chatData);
       const { post_id, message } = result?.data;
@@ -37,7 +38,7 @@ export const useConnectToChat = (post_id: string) => {
       console.log(err);
     }
   };
-  promisecall();
+  return { connectToChat };
 };
 
 const useSendMessage = (post_id: string, message: string) => {
