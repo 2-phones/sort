@@ -1,2 +1,16 @@
 .DS_Store
 .vscode/*
+node_modules
+
+repository.md
+
+docs
+logs
+build
+dist
+
+reuselogic
+S3upload
+.env*
+
+
