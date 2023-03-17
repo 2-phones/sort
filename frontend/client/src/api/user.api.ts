@@ -14,3 +14,7 @@ export const getUserPost = async (access_token: string) => {
     },
   });
 };
+
+export const getUserID = async () => {
+  return await UserAPI.get();
+};

@@ -8,7 +8,7 @@ import {
 } from '@nestjs/websockets';
 import { Server, Socket } from 'socket.io';
 
-@WebSocketGateway(8081, { cors: { origin: '*' } })
+@WebSocketGateway(8081, { namespace: 'chat', cors: { origin: '*' } })
 export class EventsGateway {
   @WebSocketServer() public server: Server;
   private readonly logger = new Logger(EventsGateway.name);

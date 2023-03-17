@@ -1,3 +1,14 @@
+
+## 기술
+
+### 개발
+
+<b>`TypeScript`, `Nestjs`, `TypeORM`, `JWT`, `Websocket`, `MYSQL`<b/>
+
+### 배포
+  
+<b> `AWS(EC2,RDS)`, `Docker`, `Nginx` <b/>
+
 ## 📚 API
 
 <details>
@@ -29,7 +40,12 @@
 <br/><br/>
 
 ## 🗂 Architecture
-<img width=600px height=400px src="https://user-images.githubusercontent.com/87120463/217426292-fd87c8a0-f85f-4c46-ae25-6cb00f528081.png"/>
+
+<img width=800px height=400px src="https://user-images.githubusercontent.com/87120463/224270630-7c00bd0e-5c71-4699-ab79-e7b8fc6ff64a.png"/>
+
+
+<!-- https://user-images.githubusercontent.com/87120463/224269326-c116a785-a63a-44f4-9a75-3e0ef6a0ef94.png-->
+<!-- https://user-images.githubusercontent.com/87120463/224268685-29529e23-c2d8-40fe-8eb6-fcd488645bfc.png -->
 
 <details>
   <summary><h3>프로젝트 구조</h3></summary>
