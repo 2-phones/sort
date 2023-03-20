@@ -1,7 +1,7 @@
+import { useAppSelector } from './../common/redux.hook';
 import { useState, useEffect } from 'react';
 import { createChat } from '../../api/chat.api';
 import { socket } from '../../config/chat.config';
-import { useAppSelector } from '../common/redux.hook';
 
 export const useChat = (chatMessage: any) => {
   const [room, setRoom] = useState<any>('');
@@ -27,11 +27,10 @@ export const useChat = (chatMessage: any) => {
 export const useConnectToChat = (post_id: string) => {
   const chatData = { post_id, message: 'gee' };
   const [receiveMsg, setReceiveMsg] = useState('');
-
   const connectToChat = async () => {
     try {
       const result = await createChat(chatData);
-      const { post_id, message } = result?.data;
+      const { postId, message } = result?.data;
       // useSendMessage(post_id, message);
       console.log(result);
     } catch (err) {
