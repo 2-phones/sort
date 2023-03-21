@@ -1,5 +1,4 @@
 import { createid } from './../util/randomString.util';
-import { SocialSignupDto } from './../dto/auth/signup.dto';
 import { TokenService } from './token.service';
 import { getSocialData } from './../util/axios.social';
 import { SignupDto } from 'src/dto/auth/signup.dto';

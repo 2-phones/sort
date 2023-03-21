@@ -1,4 +1,4 @@
-import { PostIdDto, PostStatusDto, UserIdDto } from './../dto/posts/posts.dto';
+import { PostStatusDto } from './../dto/posts/posts.dto';
 import { PostsRepository } from './../repositories/posts.repository';
 import { Injectable, NotFoundException } from '@nestjs/common';
 

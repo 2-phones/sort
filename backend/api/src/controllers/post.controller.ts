@@ -1,5 +1,5 @@
 import { TokenService } from 'src/services/token.service';
-import { PostIdDto, PostStatusDto, UserIdDto } from './../dto/posts/posts.dto';
+import { PostStatusDto } from './../dto/posts/posts.dto';
 import {
   Body,
   Controller,
