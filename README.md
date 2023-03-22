@@ -2,9 +2,9 @@
 
 ## 💻 SORT(Sell Own Region Ticket)
 
-
+  <a href="https://ticketissort.com" target="_blank">
   <img src='https://user-images.githubusercontent.com/104279155/195317360-06a22c15-b9dc-4191-80e1-a88dc74dcf79.svg'/>
-
+  </a>
   
 ### sort v2.0.3 티켓 중고 거래 웹 서비스
 </div>
