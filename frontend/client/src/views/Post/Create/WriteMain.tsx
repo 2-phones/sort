@@ -7,6 +7,7 @@ import { useCreatePost } from '../../../hooks/post/posts.hook';
 import { useValidate } from '../../../hooks/common/validation.hook';
 import { useClick } from '../../../hooks/common/click.hook';
 import { useAppSelector } from '../../../hooks/common/redux.hook';
+import { useS3Upload } from '../../../hooks/post/imgeUpload.hook';
 
 const WriteMain = () => {
   const [userData, changehandler] = usePostInput();
@@ -14,11 +15,17 @@ const WriteMain = () => {
   const { isClick, oneClickHandler } = useClick();
   const categoires = useAppSelector((state) => state.posts.categories);
   const inputs = useAppSelector((state) => state.page.writePageInputs);
+  const { handleFile, uploadFile, previewImg } = useS3Upload();
 
   const postHandler = (data: any) => {
     oneClickHandler();
     postCheck(data);
-    check ? useCreatePost(data) : null;
+    if (check) {
+      useCreatePost(data);
+      uploadFile();
+    }
+
+    return;
   };
 
   return (
@@ -48,14 +55,19 @@ const WriteMain = () => {
                   type="file"
                   id="file"
                   accept="image/jpg, image/jpeg, image/png, image/svg "
-                  onChange={changehandler}
+                  onChange={handleFile}
                 />
               </Writes.InputBox>
-              {userData.img_url ? (
+              {previewImg.map((img) => (
+                <Writes.UpImg>
+                  <img src={img} />
+                </Writes.UpImg>
+              ))}
+              {/* {userData.img_url ? (
                 <Writes.UpImg>
                   <img src={userData.img_url} />
                 </Writes.UpImg>
-              ) : null}
+              ) : null} */}
             </Writes.Wrap>
           </Writes.ImgWrap>
         </Writes.Writeframe>
