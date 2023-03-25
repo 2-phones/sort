@@ -13,7 +13,7 @@ interface InitialState {
   createValues: string;
   categories: string[];
   postId: string;
-  imgUrl: string[];
+  img_url: string[];
 }
 
 const initialState: InitialState = {
@@ -36,7 +36,7 @@ const initialState: InitialState = {
   statusAPI: `status?status=판매중`,
   createValues: '',
   postId: '',
-  imgUrl: [],
+  img_url: [],
 };
 
 // {id : 0 ,type : '정확순'},{id : 1 ,type : '인기순'},{id : 2 ,type : '최신순'},{id : 3 ,type : '오래된순'}
@@ -66,7 +66,7 @@ const PostsSlice = createSlice({
       state.postId = action.payload;
     },
     s3ImageUrl: (state, action) => {
-      state.imgUrl = [...action.payload];
+      state.img_url = [...action.payload];
     },
   },
 });
