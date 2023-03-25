@@ -7,7 +7,6 @@ interface AuthType {
 
 export const usePostInput = () => {
   const [userData, setUserData] = useState<any>({});
-
   const changehandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value, name, files } = e.target;
     const image = files ? URL.createObjectURL(files[0]) : '';
@@ -24,5 +23,5 @@ export const usePostInput = () => {
       : setUserData({ ...userData, [name]: value });
   };
 
-  return [userData, changehandler];
+  return { userData, changehandler };
 };
