@@ -16,12 +16,15 @@ const WriteMain = () => {
   const categoires = useAppSelector((state) => state.posts.categories);
   const inputs = useAppSelector((state) => state.page.writePageInputs);
   const { handleFile, uploadFile, previewImg } = useS3Upload();
+  const { create } = useCreatePost();
+
+  console.log(check);
 
   const postHandler = (data: any) => {
     oneClickHandler();
     postCheck(data);
     if (check) {
-      useCreatePost(data);
+      create(data);
       uploadFile();
     }
 
