@@ -23,5 +23,5 @@ export const usePostInput = () => {
       : setUserData({ ...userData, [name]: value });
   };
 
-  return { userData, changehandler };
+  return [userData, changehandler];
 };
