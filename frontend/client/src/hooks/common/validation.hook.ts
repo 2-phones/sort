@@ -1,16 +1,21 @@
 import { useState, useEffect } from 'react';
-import { tree } from '../components/Imgs/imgExport';
+import { useAppSelector } from './redux.hook';
 
 export const useValidate = () => {
   const [check, setCheck] = useState<any>();
+  // const { img_url } = useAppSelector((state) => state.posts);
 
   const postCheck = (data: any) => {
-    const { title, body, price, end_date, img_url } = data;
-    title && body && price && end_date && img_url ? setCheck(true) : setCheck(false);
+    const postObjectKeys = ['title', 'body', 'price', 'end_date'];
+    postObjectKeys.forEach((key) => {
+      data[key] 
+    });
+    const { title, body, price, end_date } = data;
+    title && body && price && end_date ? setCheck(true) : setCheck(false);
+    data.forEach((postData: any) => {
+      postData ? setCheck(true) : setCheck(false);
+    });
   };
-  useEffect(() => {
-    postCheck('');
-  }, []);
 
   return { postCheck, check };
 };
