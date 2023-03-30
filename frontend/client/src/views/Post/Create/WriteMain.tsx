@@ -23,12 +23,12 @@ const WriteMain = () => {
   const postHandler = (data: any) => {
     oneClickHandler();
     postCheck(data);
-    if (check) {
-      create(data);
-      uploadFile();
+    if (!check) {
+      return;
     }
 
-    return;
+    create(data);
+    uploadFile();
   };
 
   return (
