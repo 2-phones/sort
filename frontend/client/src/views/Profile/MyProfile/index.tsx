@@ -2,13 +2,10 @@ import React, { useState } from 'react';
 import Draws from '../Withdraw/style';
 import Sides from '../SideBar/style';
 import { useDispatch, useSelector } from 'react-redux';
-import { editUserInfo } from '../../../util/userInfo';
 import { Advertise, Certified, CertifiedButton, Checkbox, IdBox, NameBox, InputBox, PasswordBox } from './style';
 
 const MyProfile = ({ profile }: any) => {
-  const editName = useDispatch();
   const [editInput, setEdit] = useState('');
-  const { editInfo } = editUserInfo();
 
   return (
     <Draws.Container>
