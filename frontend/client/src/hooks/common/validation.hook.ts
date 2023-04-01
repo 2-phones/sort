@@ -8,12 +8,7 @@ export const useValidate = () => {
   const postCheck = (data: any) => {
     const postObjectKeys = ['title', 'body', 'price', 'end_date'];
     postObjectKeys.forEach((key) => {
-      data[key] 
-    });
-    const { title, body, price, end_date } = data;
-    title && body && price && end_date ? setCheck(true) : setCheck(false);
-    data.forEach((postData: any) => {
-      postData ? setCheck(true) : setCheck(false);
+      data[key] ? setCheck(true) : setCheck(false);
     });
   };
 
