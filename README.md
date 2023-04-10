@@ -12,7 +12,10 @@
 <br>
 
 - <b>기 간</b> : 2023.02 ~ 2023. 03
-- <b>인 원</b> : 개인 프로젝트
+- <b>인 원</b> : 1명
+
+
+
 
 - [sort v1.0.0](https://github.com/codestates-seb/seb39_main_018)
 <br/><br/>
