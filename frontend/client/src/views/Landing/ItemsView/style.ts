@@ -50,7 +50,8 @@ const ItemPreview = styled.div`
   border: 1px solid #e5e5e5;
   border-radius: 5px;
   background: #ffffff;
-  ${ItemPreview}:hover {
+
+  &:hover {
     transform: scale(1.05);
     transition: all 0.3s;
   }
@@ -60,6 +61,7 @@ const ItemPreview = styled.div`
     height: 180px;
   }
 `;
+
 const PreviewImg = styled.div`
   width: 100%;
   height: 160px;
@@ -115,12 +117,4 @@ const AllviewBtn = styled.div`
   }
 `;
 
-export default {
-  ItemsView_Container,
-  PreviewList,
-  ItemPreview,
-  PreviewImg,
-  PreviewInfo,
-  PreviewPrice,
-  AllviewBtn,
-};
+export { ItemsView_Container, PreviewList, PreviewImg, PreviewInfo, PreviewPrice, AllviewBtn, ItemPreview };
