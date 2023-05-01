@@ -18,7 +18,6 @@ const WriteMain = () => {
   const { handleFile, uploadFile, previewImg } = useS3Upload();
   const { create } = useCreatePost();
 
-  console.log(check);
 
   const postHandler = (data: any) => {
     oneClickHandler();
