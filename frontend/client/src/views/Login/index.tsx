@@ -57,9 +57,7 @@ const Login = () => {
                 hover={li.hover}
                 onClick={() => useAuthBtnClick(li.social, 'login')}
               >
-                <p className="logo">
-                  <img src={li.svg} />
-                </p>
+                <p className="logo">{!li.svg ? null : <img src={li.svg} />}</p>
                 <p>{li.name} 로그인</p>
               </ButtonUI>
             </S.ButtonBox>
