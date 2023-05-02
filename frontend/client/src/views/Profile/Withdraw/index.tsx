@@ -5,24 +5,12 @@ import Draws from './style';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { loginAPi } from '../../../util/requestLogin';
+
 
 const Withdraw = () => {
   // 탈퇴사유 적어야 탈퇴신청 가능
   const navigate = useNavigate();
-  const deleteInfo = (id) => {
-    loginAPi
-      .delete(`user/${id}`)
-      .then((res) => {
-        alert('탈퇴 되었습니다!');
-        localStorage.clear();
-        location.reload();
-        return navigate('/main');
-      })
-      .catch((err) => {
-        alert('탈퇴 실패 했습니다 관리자에게 문의하세요!');
-      });
-  };
+  const deleteInfo = (id) => {};
 
   const writeInput = useRef();
   const [write, setWrite] = useState('');
@@ -173,20 +161,16 @@ const Withdraw = () => {
           <Draws.AgreeBox>
             <Draws.H3>회원탈퇴 안내사항</Draws.H3>
             <Draws.Li>
-              전자상거래 등 소비자 보호에 관한 법률에 따라 계약 또는 청약철회 등에 관한 기록,
-              대금결제 및 재화 등의 공급에 관한 기록은 5년간 보존됩니다.
+              전자상거래 등 소비자 보호에 관한 법률에 따라 계약 또는 청약철회 등에 관한 기록, 대금결제 및 재화 등의
+              공급에 관한 기록은 5년간 보존됩니다.
             </Draws.Li>
             <Draws.Li>탈퇴 이후에는 회원정보를 복원할 수 없습니다.</Draws.Li>
-            <Draws.Li>
-              회원정보는 내부 기준에 따라 부정이용 방지를 위해 별도로 3년간 보관될 수 있습니다.
-            </Draws.Li>
+            <Draws.Li>회원정보는 내부 기준에 따라 부정이용 방지를 위해 별도로 3년간 보관될 수 있습니다.</Draws.Li>
           </Draws.AgreeBox>
 
           <Draws.RealAgree>
             <Draws.BlackButtonBox onClick={() => withdrawCheck()}>탈퇴하기</Draws.BlackButtonBox>
-            <Draws.WhiteButtonBox onClick={() => navigate('/my/profile')}>
-              취소하기
-            </Draws.WhiteButtonBox>
+            <Draws.WhiteButtonBox onClick={() => navigate('/my/profile')}>취소하기</Draws.WhiteButtonBox>
           </Draws.RealAgree>
         </Draws.Content>
       </Draws.CustomerWithdraw>
