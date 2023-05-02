@@ -12,6 +12,9 @@ const Container = styled(AllSetting)`
   flex-wrap: wrap;
   z-index: 10;
   background: #ffffff;
+  @media only screen and (max-width: 300px) {
+    margin-bottom: 20px;
+  }
 `;
 
 export { Container };
