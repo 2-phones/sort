@@ -18,7 +18,6 @@ const Top = styled(AllSetting)`
   height: 20px;
   border-bottom: 1px solid var(--lightgray);
   padding: 3px;
-
   @media only screen and (min-width: 600px) {
     display: block;
   }
@@ -31,13 +30,11 @@ const Middle = styled(AllSetting)`
   max-width: 1200px;
   display: flex;
   justify-content: space-between;
-  border: 1px solid blue;
   @media only screen and (max-width: 600px) {
     text-align: center;
     flex-wrap: wrap;
   }
 `;
-
 
 const Bottom = styled(AllSetting)`
   width: 100%;
@@ -70,6 +67,7 @@ const LoginBox = styled.div`
 
 const LogoSection = styled.div`
   height: 50px;
+  width: 70%;
   img {
     width: 200px;
     height: 90%;
@@ -83,16 +81,9 @@ const LogoSection = styled.div`
 `;
 
 const SearchSection = styled.div`
+  /* border: 2px solid; */
   display: flex;
   align-items: center;
-
-  @media only screen and (min-width: 600px) {
-    float: right;
-    width: 150px;
-    right: 0;
-    margin: 0;
-    flex-grow: 0;
-  }
   @media only screen and (max-width: 600px) {
     width: 150px;
   }
@@ -103,7 +94,6 @@ const SearchSection = styled.div`
 
 const SearchMain = styled.div`
   width: 200px;
-  margin-right: 180px;
 
   @media only screen and (max-width: 600px) {
     width: 30%;
@@ -113,8 +103,8 @@ const SearchMain = styled.div`
 `;
 
 const ButtonSection = styled(AllSetting)`
-  width: 100px;
-  justify-content: space-around;
+  width: 80px;
+  justify-content: space-between;
   display: flex;
   align-items: center;
   img {
