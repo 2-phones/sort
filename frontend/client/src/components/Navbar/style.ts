@@ -6,10 +6,10 @@ const AllSetting = styled.div`
 `;
 
 const Container = styled.div`
-  position: fixed;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   background: #ffffff;
 `;
 
@@ -25,24 +25,19 @@ const Top = styled(AllSetting)`
 `;
 
 const Middle = styled(AllSetting)`
-  padding: 10px 0;
-  margin-left: 30px;
-  width: 100%;
+  padding: 10px;
   left: 0;
   right: 0;
-
-  @media only screen and (min-width: 600px) {
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid blue;
+  @media only screen and (max-width: 600px) {
     text-align: center;
-    display: block;
+    flex-wrap: wrap;
   }
 `;
 
-const Main = styled.div`
-  height: 100%;
-  display: flex;
-  justify-content: right;
-  align-items: center;
-`;
 
 const Bottom = styled(AllSetting)`
   width: 100%;
@@ -73,20 +68,23 @@ const LoginBox = styled.div`
   justify-content: space-between;
 `;
 
-const LogoSection = styled(AllSetting)`
+const LogoSection = styled.div`
   height: 50px;
-
   img {
-    width: 100%;
+    width: 200px;
     height: 90%;
     cursor: pointer;
   }
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+    display: flex;
+    margin-bottom: 20px;
+  }
 `;
 
-const SearchSection = styled(AllSetting)`
-  height: 100%;
+const SearchSection = styled.div`
+  display: flex;
   align-items: center;
-  justify-content: flex-end;
 
   @media only screen and (min-width: 600px) {
     float: right;
@@ -95,26 +93,30 @@ const SearchSection = styled(AllSetting)`
     margin: 0;
     flex-grow: 0;
   }
+  @media only screen and (max-width: 600px) {
+    width: 150px;
+  }
+  @media only screen and (max-width: 300px) {
+    width: 100%;
+  }
 `;
 
 const SearchMain = styled.div`
   width: 200px;
   margin-right: 180px;
 
-  @media only screen and (min-width: 600px) {
-    width: 300px;
-    margin-right: 200px;
+  @media only screen and (max-width: 600px) {
+    width: 30%;
+  }
+  @media only screen and (max-width: 500px) {
   }
 `;
 
 const ButtonSection = styled(AllSetting)`
-  margin-left: -180px;
   width: 100px;
-  margin-right: 20px;
   justify-content: space-around;
   display: flex;
-  text-align: right;
-
+  align-items: center;
   img {
     height: 20px;
     cursor: pointer;
@@ -122,8 +124,13 @@ const ButtonSection = styled(AllSetting)`
   }
 
   @media only screen and (min-width: 900px) {
-    width: 160px;
-    margin-right: 180px;
+  }
+  @media only screen and (max-width: 500px) {
+    width: 30%;
+  }
+  @media only screen and (max-width: 300px) {
+    justify-content: center;
+    margin-top: 20px;
   }
 `;
 
@@ -194,7 +201,6 @@ export {
   Container,
   Top,
   Middle,
-  Main,
   Bottom,
   BottomUnderLine,
   LoginSection,
