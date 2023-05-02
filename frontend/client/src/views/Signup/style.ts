@@ -13,7 +13,8 @@ const LogoSection = styled.div`
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  padding: 30px 0;
+  padding-top: 30px;
+  padding-bottom: 10px;
 
   .logo {
     font-size: 25px;
@@ -45,12 +46,12 @@ const AuthBtn = styled.div`
 `;
 
 const ButtonSection = styled.div`
-  margin-top: 40px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   height: 150px;
   position: relative;
+  margin-top: 23px;
   .logo {
     display: flex;
     position: absolute;
@@ -68,7 +69,7 @@ const ButtonBox = styled.div`
 
 const LoginSection = styled.div`
   display: flex;
-  padding: 40px 0;
+  padding: 35px 0;
   font-size: 11px;
   justify-content: center;
   .body {

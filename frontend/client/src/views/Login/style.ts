@@ -13,7 +13,8 @@ const LogoSection = styled.div`
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  padding: 30px 0;
+  padding-top: 30px;
+  padding-bottom: 10px;
 
   .logo {
     font-size: 25px;
@@ -38,7 +39,7 @@ const InputBox = styled.div`
 
 const OptionSection = styled.div`
   display: flex;
-  margin-top: 30px;
+  margin: 40px 0;
   align-items: center;
   justify-content: space-between;
   p {
@@ -59,7 +60,7 @@ const KeepLoggedin = styled.div`
 `;
 
 const ButtonSection = styled.div`
-  margin-top: 20px;
+  margin-top: 25px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -82,7 +83,7 @@ const ButtonBox = styled.div`
 
 const SignupSection = styled.div`
   display: flex;
-  padding: 40px 0;
+  padding: 35px 0;
   font-size: 11px;
   justify-content: center;
   .body {
