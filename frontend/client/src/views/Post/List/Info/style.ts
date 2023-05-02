@@ -37,9 +37,7 @@ const ItemImg = styled(ItemInfoOption)`
   @media screen and (max-width: 620px) {
     height: 200px;
   }
-  /* @media screen and (max-width: 450px) {
-    height: 160px;
-  } */
+
 `;
 
 const Itemtext = styled.div`
