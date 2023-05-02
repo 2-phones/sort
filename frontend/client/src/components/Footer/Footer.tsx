@@ -30,7 +30,7 @@ const Footer = () => {
                         color: 'black',
                       }}
                     >
-                      Send Email
+                      <a href={process.env.EMAIL}>Send Email</a>
                     </Foots.JustSpan>
                   </Foots.FooterLink>
                 </Foots.Contact>
@@ -41,8 +41,6 @@ const Footer = () => {
                 <Foots.Contact>
                   <Foots.FooterLink>
                     <Foots.JustSpan>Team</Foots.JustSpan>
-                    <Foots.JustSpan>Client</Foots.JustSpan>
-                    <Foots.JustSpan>Server</Foots.JustSpan>
                   </Foots.FooterLink>
                 </Foots.Contact>
               </Foots.Left>
@@ -78,8 +76,8 @@ const Footer = () => {
 
           <Foots.Bottom>
             <Foots.BottomLeft>
-              솔트 서비스 내 상품을 제외한 모든 상품은 개인 간 거래로 이루어지며, 구매 및 판매 시
-              신중하게 진행하시길 바랍니다.
+              솔트 서비스 내 상품을 제외한 모든 상품은 개인 간 거래로 이루어지며, 구매 및 판매 시 신중하게 진행하시길
+              바랍니다.
               <br />
               이에 관한 법적 책임을 지지 않습니다.
             </Foots.BottomLeft>

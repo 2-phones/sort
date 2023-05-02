@@ -13,7 +13,10 @@ const FooterContainer = styled.div`
   background: white;
   color: black;
   margin: 0 auto;
-
+  a {
+    text-decoration: none;
+    color: black;
+  }
   @media only screen and (min-width: 580px) {
     min-height: 200px;
   }
