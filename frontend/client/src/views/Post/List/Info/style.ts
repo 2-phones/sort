@@ -14,19 +14,8 @@ const ItemBox = styled.div`
     font-family: 'Pretendard-Regular';
   }
 
-  @media screen and (max-width: 620px) {
-    width: 45%;
+  @media screen and (max-width: 480px) {
     height: 300px;
-    margin: 10px 10px;
-  }
-  @media screen and (max-width: 600px) {
-    width: 35%;
-    height: 300px;
-    margin: 10px 10px;
-  }
-  @media screen and (max-width: 450px) {
-    width: 35%;
-    height: 250px;
   }
 `;
 
@@ -48,9 +37,9 @@ const ItemImg = styled(ItemInfoOption)`
   @media screen and (max-width: 620px) {
     height: 200px;
   }
-  @media screen and (max-width: 450px) {
+  /* @media screen and (max-width: 450px) {
     height: 160px;
-  }
+  } */
 `;
 
 const Itemtext = styled.div`
