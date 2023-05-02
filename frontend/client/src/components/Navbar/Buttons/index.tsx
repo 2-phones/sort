@@ -13,7 +13,7 @@ const NavButtons = () => {
   const [buttons, setButtons] = useState([
     { id: 0, className: 'manIcon', src: NavIcon.UserIcon, path: '/mypage', click: 'login' },
     { id: 1, className: 'msgIcon', src: NavIcon.ChatIcon, path: '', click: 'login' },
-    { id: 2, className: 'menuIcon', src: NavIcon.MenuIcon, path: '', click: null },
+    // { id: 2, className: 'menuIcon', src: NavIcon.MenuIcon, path: '', click: null },
   ]);
   return (
     <S.ButtonSection>
