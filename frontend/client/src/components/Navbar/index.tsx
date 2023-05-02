@@ -13,23 +13,21 @@ const Navbar = () => {
   const navigate = useNavigate();
   const token = tokenCheck();
   return (
-    <>
+    <S.Container>
       <S.Top>{token ? <NavLogout /> : <NavLogin />}</S.Top>
       <S.Middle>
-        <S.Main>
-          <S.LogoSection>
-            <p>
-              <img src={SortLogo} onClick={() => navigate('/')} />
-            </p>
-          </S.LogoSection>
-          <NavSearch />
-          <NavButtons />
-        </S.Main>
+        <S.LogoSection>
+          <p>
+            <img src={SortLogo} onClick={() => navigate('/')} />
+          </p>
+        </S.LogoSection>
+        <NavSearch />
+        <NavButtons />
       </S.Middle>
       <S.Bottom>
         <NavCategory />
       </S.Bottom>
-    </>
+    </S.Container>
   );
 };
 
