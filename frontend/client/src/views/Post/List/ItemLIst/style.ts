@@ -8,6 +8,7 @@ const ItemContainer = styled.div`
     flex-wrap: wrap;
     margin: 0;
   }
+
   @media screen and (max-width: 320px) {
     display: flex;
   }
@@ -18,15 +19,34 @@ const ItemListBox = styled.div`
   width: 100%;
   flex-wrap: wrap;
   justify-content: center;
+  margin: 0 10px;
+  @media screen and (max-width: 620px) {
+    justify-content: space-between;
+  }
+
+  @media screen and (max-width: 480px) {
+    justify-content: center;
+  }
 `;
 
 const ItemWrapper = styled.div`
   width: 278px;
   height: 340px;
-  margin: 10px 10px;
+  margin: 10px;
   img {
     width: 100%;
     height: 240px;
+  }
+  @media screen and (max-width: 633px) {
+    width: 45%;
+  }
+
+  @media screen and (max-width: 480px) {
+    width: 60%;
+  }
+
+  @media screen and (max-width: 350px) {
+    width: 50%;
   }
 `;
 
