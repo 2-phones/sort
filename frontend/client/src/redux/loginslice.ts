@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { LoginType, SignupType } from '../util/loginType';
+import { LoginType, SignupType } from './InitialState/loginType';
 
 type InitialState = {
   signupInfo: SignupType;
