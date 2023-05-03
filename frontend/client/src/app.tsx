@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import GlobalStyle from './globalStyle';
+import GlobalStyle from '@/styles/global.style';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { motion } from 'framer-motion';
