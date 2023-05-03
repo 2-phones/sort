@@ -10,6 +10,7 @@ interface InitialState {
   views: number;
   dummyData: number[];
   statusAPI: string;
+  sellType: string;
   createValues: string;
   categories: string[];
   postId: string;
@@ -34,6 +35,7 @@ const initialState: InitialState = {
   categories: ['- 선택 -', '연극/영화', '숙박', '전시', '여행', '스포츠', '공연'],
   views: 8,
   statusAPI: `status?status=판매중`,
+  sellType: '판매중',
   createValues: '',
   postId: '',
   img_url: [],
@@ -68,8 +70,12 @@ const PostsSlice = createSlice({
     s3ImageUrl: (state, action) => {
       state.img_url = [...action.payload];
     },
+    sellStatusHandle: (state, action) => {
+      state.sellType = action.payload;
+    },
   },
 });
 
 export default PostsSlice;
-export const { isFocues, viewCount, dropDownSelect, createPost, addPostId, s3ImageUrl } = PostsSlice.actions;
+export const { isFocues, viewCount, dropDownSelect, createPost, addPostId, s3ImageUrl, sellStatusHandle } =
+  PostsSlice.actions;
