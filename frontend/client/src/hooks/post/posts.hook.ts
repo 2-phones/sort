@@ -16,7 +16,7 @@ export const useGetPosts = (type: string | undefined) => {
     const promiseCall = async () => {
       try {
         const result = await getPosts(`posts/${statusAPI}`);
-        setPosts(result);
+        setTimeout(() => setPosts(result), 1800);
       } catch {}
     };
     promiseCall();
@@ -38,18 +38,21 @@ export const useGetPostId = (id: string | undefined) => {
   return { post };
 };
 
-export const useCreatePost = (data: any) => {
-  const post_data = { ...data, status: '판매중' };
-  const promiseCall = async () => {
+export const useCreatePost = () => {
+  const { img_url } = useAppSelector((state) => state.posts);
+  const create = async (data: any) => {
+    const post_data = { ...data, img_url, status: '판매중' };
     try {
-      const result = await createPost(post_data);
-      window.alert('게시물이 등록 되었습니다.');
-      return location.replace('/mypage');
+      window.alert('ㅎㅇ');
+      // const result = await createPost(post_data);
+      // window.alert('게시물이 등록 되었습니다.');
+      // return location.replace('/mypage');
     } catch (err) {
       return window.alert('게시물 등록 실패했습니다. 재시도 해주세요');
     }
   };
-  promiseCall();
+
+  return { create };
 };
 
 export const useEditPost = (data: any, post_id: string) => {
@@ -67,7 +70,6 @@ export const useEditPost = (data: any, post_id: string) => {
 };
 
 export const useDeletePost = (post_id: string) => {
-  console.log(post_id);
   const promiseCall = async () => {
     try {
       const result = await deletePost(post_id);
@@ -79,4 +81,14 @@ export const useDeletePost = (post_id: string) => {
     }
   };
   promiseCall();
+};
+
+export const useFilteredPosts = () => {
+  const [sellType, setSellType] = useState<string>('');
+
+  const sellStatusHandle = async (type: string) => {
+    setSellType(type);
+  };
+
+  return { sellType, sellStatusHandle };
 };
