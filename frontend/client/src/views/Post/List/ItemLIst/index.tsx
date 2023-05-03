@@ -11,7 +11,7 @@ const ItemList = ({ posts, dummyData }: any) => {
         <div>{posts?.length} views</div>
       </ViewsBox>
       <ItemListBox>
-        {posts
+        {posts.length
           ? posts.map((dataList) => {
               const dateResult = calculateDate(dataList.created_at);
               return (
