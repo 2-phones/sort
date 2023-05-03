@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import Lands from './style';
+import * as S from './style';
 import { RightIcon } from '../../../components/Icons/Icons';
 import { BasicBtn } from '../../../components/Button/Button';
 import { useNavigate } from 'react-router-dom';
@@ -10,37 +10,37 @@ const ItemsView = ({ posts }: any) => {
   const navigate = useNavigate();
   const dummyData = useAppSelector((state) => state.posts.dummyData);
   return (
-    <Lands.ItemsView_Container>
+    <S.ItemsView_Container>
       <div className="Previe_title">최근상품</div>
-      <Lands.PreviewList>
-        {posts
+      <S.PreviewList>
+        {posts.length
           ? posts.map((items) => {
               return (
-                <Lands.ItemPreview key={items.post_id}>
-                  <Lands.PreviewImg>
+                <S.ItemPreview key={items.post_id}>
+                  <S.PreviewImg>
                     <img src={items.img_url} />
-                  </Lands.PreviewImg>
-                  <Lands.PreviewInfo>
+                  </S.PreviewImg>
+                  <S.PreviewInfo>
                     <p className="title">{items.title}</p>
-                    <Lands.PreviewPrice>
+                    <S.PreviewPrice>
                       <p className="price">{items.price}</p>
                       <p className="won">원</p>
-                    </Lands.PreviewPrice>
-                  </Lands.PreviewInfo>
-                </Lands.ItemPreview>
+                    </S.PreviewPrice>
+                  </S.PreviewInfo>
+                </S.ItemPreview>
               );
             })
           : dummyData.slice(0, 5).map((li: number) => {
               return <LandingPostSkeleton key={li} />;
             })}
-      </Lands.PreviewList>
-      <Lands.AllviewBtn onClick={() => navigate('/main')}>
+      </S.PreviewList>
+      <S.AllviewBtn onClick={() => navigate('/main')}>
         <BasicBtn color="white" background="#363636">
           전체보기
           <RightIcon />
         </BasicBtn>
-      </Lands.AllviewBtn>
-    </Lands.ItemsView_Container>
+      </S.AllviewBtn>
+    </S.ItemsView_Container>
   );
 };
 
