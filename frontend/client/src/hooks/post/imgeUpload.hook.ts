@@ -35,7 +35,6 @@ export const useS3Upload = () => {
     setImgFiles([...imgFilesData, imgFiles]);
     const preview = URL.createObjectURL(imgFiles);
     setPreviewImg([...previewImg, preview]);
-    console.log(imgFilesData);
   };
 
   const uploadFile = async () => {
