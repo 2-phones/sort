@@ -10,7 +10,7 @@ import { useAppSelector } from '../../hooks/common/redux.hook';
 const Signup = () => {
   const [userData, changehandler] = usePostInput();
   const buttonInfo = useAppSelector((state) => state.auth.buttonInfo);
-  const inputInfo = useAppSelector((state) => state.auth.inputInfo);
+  const inputInfo = useAppSelector((state) => state.auth.signupInputs);
   const { clickHandler } = useModal();
 
   return (
@@ -51,9 +51,7 @@ const Signup = () => {
                 hover={li.hover}
                 onClick={() => useAuthBtnClick(li.social, 'signup')}
               >
-                <p className="logo">
-                  <img src={li.svg} />
-                </p>
+                <p className="logo">{!li.svg ? null : <img src={li.svg} />}</p>
                 <p>{li.name} 가입하기</p>
               </ButtonUI>
             </S.ButtonBox>
