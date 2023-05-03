@@ -9,7 +9,11 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "lib": ["es6", "dom"],
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["*"]
+    }
   },
   "ts-node": {
     "compilerOptions": {
