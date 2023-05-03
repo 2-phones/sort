@@ -5,6 +5,7 @@ import { ButtonsTypes, InputTypes } from '../InitialState/auth.initialState';
 interface InitialState {
   buttonInfo: ButtonsTypes[];
   inputInfo: InputTypes[];
+  signupInputs: InputTypes[];
   social: string;
   modalCompoents: string | null;
   loginORsignup: string;
@@ -43,6 +44,11 @@ const initialState: InitialState = {
   inputInfo: [
     { id: 0, name: 'email', label: '이메일', placeholder: '예) SORT@SORT.COM' },
     { id: 1, name: 'password', label: '비밀번호', placeholder: '' },
+  ],
+  signupInputs: [
+    { id: 0, name: 'email', label: '이메일', placeholder: '예) SORT@SORT.COM' },
+    { id: 1, name: 'password', label: '비밀번호', placeholder: '' },
+    { id: 2, name: 'password', label: '비밀번호 확인', placeholder: '' },
   ],
   social: '',
   loginORsignup: '',
