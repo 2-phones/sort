@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { useNavigate } from 'react-router-dom';
-import { ItemType, ApiType } from '../util/itemType';
+import { ItemType, ApiType } from './InitialState/itemType';
 
 interface ObjState {
   id: number;
