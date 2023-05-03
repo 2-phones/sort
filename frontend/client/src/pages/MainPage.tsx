@@ -10,7 +10,6 @@ const MainPage = () => {
   return (
     <>
       <Header />
-      <Chat />
       <ItemsMain />
       <Footer />
     </>
