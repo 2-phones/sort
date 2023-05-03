@@ -10,7 +10,6 @@ export const useChat = (chatMessage: any) => {
 
   useEffect(() => {
     socket.on('sdsds', (res) => {
-      console.log(res);
     });
   }, []);
 
@@ -19,7 +18,6 @@ export const useChat = (chatMessage: any) => {
   };
   const chatsend = () => {
     socket.emit('hello', chatData);
-    console.log('클릭!!!!');
   };
   return { chatHandle, chatData, chatsend };
 };
