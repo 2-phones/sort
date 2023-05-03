@@ -15,7 +15,7 @@ export const useGetPosts = (type: string | undefined) => {
   useEffect(() => {
     const promiseCall = async () => {
       try {
-        const result = await getPosts(`posts/${statusAPI}`);
+        const result = await getPosts(`posts`);
         setTimeout(() => setPosts(result), 1800);
       } catch {}
     };
@@ -81,14 +81,4 @@ export const useDeletePost = (post_id: string) => {
     }
   };
   promiseCall();
-};
-
-export const useFilteredPosts = () => {
-  const [sellType, setSellType] = useState<string>('');
-
-  const sellStatusHandle = async (type: string) => {
-    setSellType(type);
-  };
-
-  return { sellType, sellStatusHandle };
 };
