@@ -10,13 +10,13 @@ const SortDropdown = () => {
   const dropdown = useAppSelector((state) => state.posts.selectSort);
   const dropdownList = useAppSelector((state) => state.posts.dropdownList);
   const dispatch = useAppDispatch();
-  const { isClick, clickHandler } = useClick();
+  const { isClick, handleClick } = useClick();
 
   return (
     <S.SortSection>
       <S.SortByOption>
         <h4 className="select_text">{dropdown}</h4>
-        <p className={isClick ? 'select_icon open' : 'select_icon'} onClick={() => clickHandler()}>
+        <p className={isClick ? 'select_icon open' : 'select_icon'} onClick={() => handleClick()}>
           <DownIcon />
         </p>
       </S.SortByOption>
@@ -28,7 +28,7 @@ const SortDropdown = () => {
               key={option.id}
               onClick={() => {
                 dispatch(dropDownSelect(option.name));
-                clickHandler();
+                handleClick();
               }}
             >
               {option.name}
