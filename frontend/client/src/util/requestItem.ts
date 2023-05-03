@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from 'axios';
 import { useEffect, useState } from 'react';
-import { ItemType } from './itemType';
+import { ItemType } from '../redux/InitialState/itemType';
 import { useSelector } from 'react-redux';
 import { redirect, useNavigate } from 'react-router-dom';
 
