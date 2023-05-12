@@ -1,11 +1,14 @@
-import MiddleNav from './middleNav.component';
-import TopNav from './topNav.component';
+import BottomNav from '@/components/Header/bottomNav';
+import TopNav from '@/components/Header/topNav.component';
+import * as S from '@/styles/header/header.style';
 
 const Header = () => {
-  <header>
-    <TopNav />
-    <MiddleNav />
-  </header>;
+  return (
+    <S.HeaderLayOut>
+      <TopNav />
+      <BottomNav />
+    </S.HeaderLayOut>
+  );
 };
 
 export default Header;
