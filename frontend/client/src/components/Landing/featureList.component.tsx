@@ -8,7 +8,7 @@ const FeatureList = () => {
       <S.FeatureBox>
         {features.map((feature) => {
           return (
-            <S.FeatureItem>
+            <S.FeatureItem key={feature.id}>
               <img src={feature.src} />
               <p>{feature.text}</p>
             </S.FeatureItem>
