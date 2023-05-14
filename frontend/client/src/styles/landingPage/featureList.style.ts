@@ -18,8 +18,7 @@ const FeatureLayout = styled.section`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 500px;
-  border: 2px solid blue;
+  height: 900px;
 `;
 
 const FeatureBox = styled(CommonStyle)`
