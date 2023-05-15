@@ -4,7 +4,7 @@ const RecentPostLayOut = styled.section`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 500px;
+  height: 650px;
   h3 {
     text-align: center;
     width: 100%;
