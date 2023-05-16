@@ -13,7 +13,7 @@ const ItemsView = ({ posts }: any) => {
     <S.ItemsView_Container>
       <div className="Previe_title">최근상품</div>
       <S.PreviewList>
-        {posts.length
+        {posts?.length
           ? posts.map((items) => {
               return (
                 <S.ItemPreview key={items.post_id}>

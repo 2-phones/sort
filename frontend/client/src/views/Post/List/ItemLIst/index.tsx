@@ -13,7 +13,7 @@ const ItemList = ({ posts, dummyData }: any) => {
         <div>{posts?.length} views</div>
       </ViewsBox>
       <ItemListBox>
-        {posts.length
+        {posts?.length
           ? posts
               .filter((dataList) => (sellType === '전체' ? true : dataList.status === sellType))
               .map((dataList) => {
