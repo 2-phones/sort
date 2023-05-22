@@ -43,6 +43,13 @@ const SerachBar = styled(CommonStyle)`
     height: 100%;
     padding: 0 10px;
     border-radius: 15px;
+    border: none;
+    background: #efefef;
+    ::placeholder {
+      color: #abaaaa;
+      font-size: 12px;
+      padding-left: 5px;
+    }
   }
 `;
 
