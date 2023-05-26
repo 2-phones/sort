@@ -16,14 +16,18 @@ const PostFilterLayOut = styled.section`
 `;
 
 const TabsBox = styled(CommonStyle)`
-  width: 80%;
+  width: 1200px;
   height: 50px;
   border-bottom: 2px solid #c2c2c2;
+  margin: 15px;
+  @media screen and (max-width: 1200px) {
+    width: 100%;
+  }
 `;
 
 const FilterTabs = styled(CommonStyle)<FilterTabsProps>`
-  width: 80px;
   height: 100%;
+  padding: 0 10px;
   border-bottom: ${(props) => (props.border ? '5px solid black' : 'none')};
   font-size: 20px;
   align-items: center;
