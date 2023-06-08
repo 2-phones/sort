@@ -45,13 +45,13 @@
  
 <br>
 
-|Development|
+|Frontend|
 |-|
 | <img src="https://user-images.githubusercontent.com/87120463/233676091-a0f90da7-92b9-465a-a540-27f4c7180d38.png" width=550px />| 
 
-<!-- |Backend|
+|Backend|
 |-|
-| <img src="https://user-images.githubusercontent.com/87120463/233677326-736a7cc7-c193-4548-bd6f-743dd340ad78.png" width=550px /> |  -->
+| <img src="https://user-images.githubusercontent.com/87120463/233677326-736a7cc7-c193-4548-bd6f-743dd340ad78.png" width=550px /> |
 
 |Deploy|
 |-|
