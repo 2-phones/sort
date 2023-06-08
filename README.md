@@ -21,8 +21,8 @@
 <br>
   
 - <b>기 &nbsp;&nbsp;&nbsp;&nbsp; 간</b> : 2023.02 ~ 2022.03
-
-- <b>담 &nbsp;&nbsp;&nbsp;&nbsp; 당</b> : 프론트엔드
+<!-- 
+- <b>담 &nbsp;&nbsp;&nbsp;&nbsp; 당</b> : 프론트엔드 -->
 
 - [sort v1.0.0](https://github.com/codestates-seb/seb39_main_018)
  
